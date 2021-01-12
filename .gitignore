@@ -1,0 +1,11 @@
+.idea
+.project
+.vscode
+*.lock
+npm-debug.log
+package-lock.json
+node_modules
+dist
+rev
+v8-compile*/
+.DS_Store
