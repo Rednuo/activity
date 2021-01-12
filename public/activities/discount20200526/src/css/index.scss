@@ -1,0 +1,211 @@
+@import '../../../../Common/css/mixin2.scss';
+@import '../../../../Common/css/base.scss';
+
+$px2vw: 7.5 / 1vw ;
+
+.page-discount-wraper{
+    position: relative;
+    padding: 690/$px2vw 0 150/$px2vw;
+    background: #d6fce3 url('../img/bg.png') no-repeat center 0 / 100% auto;
+    overflow: hidden;
+    &.isMonthly{
+        padding: 690/$px2vw 0 30/$px2vw;
+    }
+    .rules{
+        position: absolute;
+        top: 252/$px2vw;
+        right: -18/$px2vw;
+        width: 90/$px2vw;
+        height: 90/$px2vw;
+        line-height: 30/$px2vw;
+        padding-left: 20/$px2vw;
+        border-radius: 10/$px2vw;
+        background-color: #40B88C;
+        box-shadow:7px 6px 17px 1px rgba(64,184,140,0.49);
+        font-size: 28/$px2vw;
+        color: #FFF;
+        text-align: center;
+        writing-mode:vertical-lr;
+        letter-spacing: 0.2em;
+    }
+    .books{
+        li{
+            position: relative;
+            width: 690/$px2vw;
+            margin: 0 auto 24/$px2vw;
+            padding: 38/$px2vw 28/$px2vw 60/$px2vw;
+            border-radius: 10/$px2vw;
+            box-shadow:0 12/$px2vw 27/$px2vw 0 rgba(200,242,216,0.2);;
+            background-color: #FFFFFF;
+            .tag{
+                position: absolute;
+                top: -2/$px2vw;
+                right: 30/$px2vw;
+                display: flex;
+                align-items: center;
+                width: 74/$px2vw;
+                height: 94/$px2vw;
+                padding: 0 10/$px2vw 10/$px2vw;
+                background: url('../img/tag.png') no-repeat 0 0 / cover;
+                text-align: center;
+                span{
+                    width: 100%;
+                    line-height: 30/$px2vw;
+                    font-size: 24/$px2vw;
+                    color: #FFF;
+                    font-weight: 500;
+                }
+            }
+            .cover{
+                float: left;
+                width: 172/$px2vw;
+                height: 226/$px2vw;
+                border-radius: 6/$px2vw;
+                box-shadow:0px 20px 40px -28px rgba(0,0,0,0.4);
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .right{
+                margin-left: 200/$px2vw;
+                h4{
+                    max-width: 80%;
+                    margin-bottom: 8/$px2vw;
+                    line-height: 42/$px2vw;
+                    font-size: 32/$px2vw;
+                    color: #272727;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+                .author{
+                    margin-bottom: 14/$px2vw;
+                    line-height: 32/$px2vw;
+                    font-size: 26/$px2vw;
+                    color: #999999;
+                }
+                .desc{
+                    margin-bottom: 20/$px2vw;
+                    line-height: 32/$px2vw;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    word-break: break-all;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    font-size: 26/$px2vw;
+                    color: #777777;
+                }
+                .price{
+                    b{
+                        font-size: 32/$px2vw;
+                        color: #FF6E41;
+                        font-weight: 500;
+                    }
+                    span{
+                        font-size: 24/$px2vw;
+                        color: #999999;
+                        text-decoration: line-through;
+                    }
+                }
+            }
+            .read-btn{
+                position: absolute;
+                right: 30/$px2vw;
+                bottom: 32/$px2vw;
+                width: 178/$px2vw;
+                height: 62/$px2vw;
+                line-height: 62/$px2vw;
+                font-size: 28/$px2vw;
+                background-color: #FF6E41;
+                color: #FFFFFF;
+                text-align: center;
+                border-radius: 50px;
+            }
+        }
+    }
+    .fixed{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        padding: 10/$px2vw 30/$px2vw;
+        background-color: #d6fce3;
+        text-align: center;
+        .vip-btn{
+            display: inline-block;
+            width: 690/$px2vw;
+            height: 112/$px2vw;
+            margin: 0 auto;
+            background: url('../img/btn.png') no-repeat 0 0 / cover;
+        }
+    }
+
+    .modal{
+        position: fixed;
+        top:0;
+        left: 0;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        .mask{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2;
+        }
+
+        .rules-dialog{
+            position: relative;
+            z-index: 3;
+            width: 600/$px2vw;
+            background:linear-gradient(131deg,rgba(48,212,138,1) 0%,rgba(12,153,107,1) 100%);
+            padding: 4/$px2vw;
+            border-radius: 15/$px2vw;
+            h4{
+                padding: 28/$px2vw;
+                line-height: 42/$px2vw;
+                text-align: center;
+                font-size: 36/$px2vw;
+                color: #fff;
+            }
+            ul{
+                padding: 34/$px2vw 38/$px2vw 40/$px2vw 50/$px2vw;
+                background-color: #fffef3;
+                border-radius: 10/$px2vw;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                li{
+                    line-height: 48/$px2vw;
+                    font-size: 26/$px2vw;
+                    font-weight: 500;
+                    text-align: justify;
+                    span{
+                        color: #0C996B;
+                        font-size: inherit;
+                    }
+                }
+            }
+            .cancel-btn{
+                position: absolute;
+                left: 50%;
+                bottom: -110/$px2vw;
+                width: 78/$px2vw;
+                height: 78/$px2vw;
+                margin-left: -39/$px2vw;
+                background: url('../img/cancel.png') no-repeat;
+                background-position: center;
+                background-size: 98%;
+            }
+        }
+
+    }
+}

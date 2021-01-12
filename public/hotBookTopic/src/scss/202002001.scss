@@ -1,0 +1,45 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+$px2vw:7.5/1vw;
+
+*{
+    font-size: 0;
+}
+
+img{
+    width: 100%;
+    max-width: 100%;
+}
+
+.booklist{
+    position: relative;
+    .b1{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 50%;
+    }
+    .b2{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 50%;
+    }
+    .b3{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 50%;
+        height: 50%;
+    }
+    .b4{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 50%;
+        height: 50%;
+    }
+}

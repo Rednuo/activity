@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>双旦活动</title>
+    <script type="text/javascript">
+        ! function(e, t) { function n() { t.body ? t.body.style.fontSize = 12 * o + "px" : t.addEventListener("DOMContentLoaded", n) } function d() { var e = i.clientWidth / 10; i.style.fontSize = e + "px" } var i = t.documentElement, o = e.devicePixelRatio || 1; if (n(), d(), e.addEventListener("resize", d), e.addEventListener("pageshow", function(e) { e.persisted && d() }), o >= 2) { var a = t.createElement("body"), s = t.createElement("div"); s.style.border = ".5px solid transparent", a.appendChild(s), i.appendChild(a), 1 === s.offsetHeight && i.classList.add("hairlines"), i.removeChild(a) } }(window, document);
+    </script>
+    <!-- <script>
+        if(location.protocol == 'https:'){
+          document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+    </script> -->
+    <script>
+        var getQueryParams = function(name, url) {
+            if (!url) url = location.href;
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(url);
+            return results == null ? null : results[1];
+        }
+        var platform = getQueryParams('platform'),
+            token = getQueryParams('token');
+
+        location.href = 'https://h5.zhuishushenqi.com/public/activities/doubleDan/giveOut.html?token='+token+'&platform='+platform;
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/index.css?t=1" />
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script>
+</head>
+
+<body>
+    <div class="page-main-wraper" v-show="!isFetching" id="J_pageIndexWraper" v-cloak>
+        <div class="top-bag">
+            <p class="allVouchers">{{parseInt(data.totalVouchers).toLocaleString()}} <span>书券</span></p>
+            <span class="start-btn" :class="{done:userData.active}" @click="postActivity"></span>
+            <p class="allPerson">—— {{parseInt(data.mockNumber).toLocaleString()}}人已参加 ——</p>
+        </div>
+        <p class="time-tip">活动将在 <span>2018-12-25 上午10点</span> 开始</p>
+        <div class="play-tips"></div>
+        <span class="rules-btn" @click="showRules=true;_czc.push(['_trackEvent', ' 双旦活动', '报名页', '规则点击', 1, 'active']);"></span>
+        <div class="loop-wrap">
+            <ul class="content move">
+                <li v-for="item in loopList"><em>{{item}}</em>已加入<span>奖池增加10书券</span></li>
+                <!-- <li>某某某某2已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某3已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某4已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某5已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某6已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某7已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某8已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某9已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某10已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某11已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某12已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某13已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某14已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某15已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某16已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某17已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某18已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某19已加入 <span>奖池增加10书券</span></li>
+                <li>某某某某20已加入 <span>奖池增加10书券</span></li> -->
+                <li class="patch" ><em>{{loopList[0]}}</em>已加入<span>奖池增加10书券</span></li>
+            </ul>
+        </div>
+        <div class="mask" v-show="showRules">
+            <div class="rules-dialog">
+                <div class="content" style=" overflow: auto">
+                    <p><span>1. </span>活动时间：2018年12月22日 上午10点——2019年1月1日 零点。12月22日至12月24日为活动报名期，登录活动页点击【立即参加】报名活动。12月25日至12月31日为阅读打卡期，每日可累计相对应的活动进度；活动支持中途加入，但中途加入的书友会错过获取最高奖励的机会哦！</p>
+                    <p><span>2. </span>阅读打卡期间，阅读5个章节即可完成当日打卡任务，每天至多打卡一次（有声小说专区不参与本次活动）；</p>
+                    <p><span>3. </span>奖励获取：完成1天的打卡任务，即可在2019年1月1日瓜分奖池获取不菲的书券奖励！瓜分金额=奖池金额/实际参与人数*奖励倍数，奖励书券有效期7天。</p>
+                    <p><span>4. </span>活动期间累计打卡3天可获2倍奖励；累计打卡5天可获2.5倍奖励；累计打卡7天可获3倍奖励。奖励将于2019年1月1日当天自动发放至您的账户；</p>
+                    <p><span>5. </span>活动中如遇到问题，可关注[ 小说]公众号，联系客服获取帮助；</p>
+                    <p><span>6. </span>如遇不可抗力造成活动不能正常进行， 神器有权取消、修改或暂停本活动；</p>
+                    <p><span>7. </span>活动规则以本平台发布的具体规则为准。</p>
+                </div>
+                <div class="footer">
+                    <span></span>
+                </div>
+                <span class="cancle-btn" @mousedown="showRules=false;"></span>
+            </div>
+            <div class="cancle-mask" @mousedown="showRules=false;"></div>
+        </div>
+        <div class="c-modal" v-show="modalMsg"><span class="dialog">{{modalMsg}}</span></div>
+    </div>
+</body>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/vue-resource.js"></script>
+<script type="text/javascript" src="js/bridge_new.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/index.js?t=1"></script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan style='display:none' id='cnzz_stat_icon_1261312741'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261312741' type='text/javascript'%3E%3C/script%3E"));</script>
+</html>

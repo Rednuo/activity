@@ -1,0 +1,21 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+$px2vw: 7.5 / 1vw ;
+.J_pageWraper {
+    font-size: 0;
+    background-color: #00bda7;
+    img {
+        width: 100%;
+        border: none;
+    }
+    .books{
+        width: 100%;
+        height: 478/$px2vw;
+        background: url('../image/201906003/img-5.jpg') no-repeat 0 0 / cover;
+        span{
+            display: inline-block;
+            width: 32%;
+            height: 100%;
+        }
+    }
+}

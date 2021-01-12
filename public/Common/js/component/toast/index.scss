@@ -1,0 +1,26 @@
+@import '../../../css/mixin.scss';
+@import '../../../css/animate.scss';
+
+.c-toast{
+    position: fixed;
+    width: 100%;
+    height: 88/$px2rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    margin: auto;
+    text-align: center;
+    z-index: 99;
+    span{
+        display: inline-block;
+        height: 88/$px2rem;
+        line-height: 28/$px2rem;
+        padding: 30/$px2rem 40/$px2rem;
+        background: rgba(0, 0, 0, 0.9);
+        border-radius: 44/$px2rem;
+        font-size: 28/$px2rem;
+        color: #fff;
+        text-align: center;
+    }
+}

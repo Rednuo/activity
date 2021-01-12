@@ -1,0 +1,49 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+$px2vw: 7.5 / 1vw ;
+.J_pageWraper {
+    font-size: 0;
+    background: #ff7457;
+    img {
+        width: 100%;
+        border: none;
+    }
+    .books{
+        box-sizing: border-box;
+        width: 750/$px2vw;
+        height: 556/$px2vw;
+        padding: 126/$px2vw 3% 0;
+        background: url('../image/201906011/img-5.jpg') no-repeat 0 0 / contain;
+        font-size: 0;
+        text-align: center;
+        li{
+            box-sizing: border-box;
+            display: inline-block;
+            width: 33.3%;
+            padding: 0 16/$px2vw;
+            text-align: center;
+            .cover{
+                display: inline-block;
+                width: 100%;
+                margin-bottom: 10/$px2vw;
+                border-radius: 8/$px2vw;
+                overflow: hidden;
+            }
+            p{
+                text-align: left;
+            }
+            .title{
+                margin-bottom: 10/$px2vw;
+                line-height: 32/$px2vw;
+                font-size: 28/$px2vw;
+                color: #FDE7DF;
+                font-weight: bold;
+            }
+            .author{
+                font-size: 22/$px2vw;
+                line-height: 28/$px2vw;
+                color: #FDE7DF;
+            }
+        }
+    }
+}

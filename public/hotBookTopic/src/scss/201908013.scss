@@ -1,0 +1,51 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+$px2vw: 7.5 / 1vw ;
+
+.J_pageWraper {
+    font-size: 0;
+    background-color: #040203;
+    img {
+        width: 100%;
+        border: none;
+    }
+    .target {
+        position: absolute;
+        &.target1 {
+            left: 0;
+            top: 604/$px2vw;
+            width: 750/$px2vw;
+            height: 472/$px2vw;
+        }
+        &.target2 {
+            left: 0;
+            top: 1088/$px2vw;
+            width: 375/$px2vw;
+            height: 430/$px2vw;
+        }
+        &.target3 {
+            right: 0;
+            top: 1088/$px2vw;
+            width: 375/$px2vw;
+            height: 430/$px2vw;
+        }
+        &.target4 {
+            left: 0;
+            top: 4396/$px2vw;
+            width: 750/$px2vw;
+            height: 258/$px2vw;
+        }
+        &.target5 {
+            left: 0;
+            top: 4654/$px2vw;
+            width: 750/$px2vw;
+            height: 278/$px2vw;
+        }
+        &.target6 {
+            left: 0;
+            top: 4932/$px2vw;
+            width: 750/$px2vw;
+            height: 410/$px2vw;
+        }
+    }
+}

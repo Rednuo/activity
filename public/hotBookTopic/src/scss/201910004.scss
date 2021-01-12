@@ -1,0 +1,40 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+$px2vw:7.5/1vw;
+.J_pageWraper {
+    font-size: 0;
+    background-color: #ffe3cd;
+    img {
+        width: 100%;
+        border: none;
+        margin-top: -1/$px2vw;
+
+    }
+    .video-wrap{
+        width: 700/$px2vw;
+        margin: 20/$px2vw auto 40/$px2vw;
+        border-radius: 20/$px2vw;
+        border:6/$px2vw solid #fff;
+        overflow: hidden;
+        .video{
+            width: 100%;
+        }
+    }
+    .btn_bg {
+        height: 140/$px2vw;
+    }
+    .btn {
+        position: fixed;
+        width: 100%;
+        background-color: #fff;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        padding: 22/$px2vw 0 36/$px2vw;
+        img{
+            width: auto;
+            height: 85/$px2vw;
+        }
+    }
+}

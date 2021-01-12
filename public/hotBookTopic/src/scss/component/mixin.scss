@@ -1,0 +1,87 @@
+// 设计稿的宽度作为转换基础
+$design-width: 750;
+
+// px转rem
+$px2rem: 100 / 1rem ;
+
+/* px to rem */
+@mixin px2rem($property,$px-values,$baseline-px:75px,$support-for-ie:false){
+    //Conver the baseline into rems
+    $baseline-rem: $baseline-px / 1rem * 1;
+    //Print the first line in pixel values
+    @if $support-for-ie {
+        #{$property}: $px-values;
+    }
+    //if there is only one (numeric) value, return the property/value line for it.
+    @if type-of($px-values) == "number"{
+        #{$property}: $px-values / $baseline-rem;
+    }
+    @else {
+        //Create an empty list that we can dump values into
+        $rem-values:();
+        @each $value in $px-value0s{
+            // If the value is zero or not a number, return it
+            @if $value == 0 or type-of($value) != "number"{
+                $rem-values: append($rem-values, $value / $baseline-rem);
+            }
+        }
+        // Return the property and its list of converted values
+        #{$property}: $rem-values;
+    }
+}
+
+/* font size  */
+@mixin font-dpr($font-size){
+    font-size: ($font-size*2)/$px2rem;
+    
+    /* font-size: $font-size#{"px"};
+
+    [data-dpr="2"] & {
+        font-size: $font-size * 2#{"px"};
+    }
+
+    [data-dpr="3"] & {
+        font-size: $font-size * 3#{"px"};
+    } */
+}
+
+/* 1px */
+@mixin onepx($dir,$color){
+    [data-dpr="1"] & {
+        @if $dir == top {
+            background-size: 100% 1px;
+        } @else if $dir == bottom {
+            background-size: 100% 1px;
+        } @else if $dir == left {
+            background-size: 1px 100%;
+        } @else if $dir == right {
+            background-size: 1px 100%;
+        }
+        background-image: linear-gradient(to $dir,transparent 50%,$color 50%);
+        background-repeat: no-repeat;
+        background-position: $dir;
+    }
+    
+    [data-dpr="2"] & {
+        @if $dir == top {
+            border-top:1px solid $color;
+        } @else if $dir == bottom {
+            border-bottom:1px solid $color;
+        } @else if $dir == left {
+            border-left:1px solid $color;
+        } @else if $dir == right {
+            border-right:1px solid $color;
+        }
+    }
+    [data-dpr="3"] & {
+        @if $dir == top {
+            border-top:1px solid $color;
+        } @else if $dir == bottom {
+            border-bottom:1px solid $color;
+        } @else if $dir == left {
+            border-left:1px solid $color;
+        } @else if $dir == right {
+            border-right:1px solid $color;
+        }
+    }
+}

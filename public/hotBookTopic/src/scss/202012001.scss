@@ -1,0 +1,74 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+$px2vw: 7.5/1vw;
+
+img{
+    width: 100%;
+    max-width: 100%;
+}
+
+html, body{
+    background-color: #306DEC;
+}
+
+.J_pageWraper {
+    padding-bottom: 180/$px2vw;
+    font-size: 0;
+    
+    .wrapper {
+        box-sizing: border-box;
+        width: 750/$px2vw;
+        border-style: solid;
+        border-width: 53/$px2vw;
+        border-image: 53 53 url(../image/202012001/bg.png);
+        border-image-repeat: stretch;
+        background-color: #ffffff;
+        .title {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            span {
+                font-size: 32/$px2vw;
+                font-family: PingFang SC;
+                font-weight: bold;
+                color: #FD504E;
+                line-height: 40/$px2vw;
+            }
+            img {
+                width: 170/$px2vw;
+                height: 82/$px2vw;
+            }
+        }
+        .discount {
+            border-bottom: 1/$px2vw solid #ACBCC0;
+            padding: 33/$px2vw 0 28/$px2vw;
+            span {
+                font-size: 28/$px2vw;
+                font-family: PingFang SC;
+                color: #000000;
+                line-height: 41/$px2vw;
+                &:nth-of-type(1) {
+                    font-weight: bold;
+                }
+                &:nth-of-type(2) {
+                    color: #333333;
+                }
+            }
+            &:first-of-type {
+                padding-top: 0;
+            }
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .btn {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        z-index: 9999;
+    }
+}

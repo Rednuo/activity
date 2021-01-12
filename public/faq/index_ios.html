@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正在接入客服</title>
+    <style>
+        body{
+            /* background-color: rgb(235, 233, 233); */
+            padding-top: 100px;
+            text-align: center;
+            color: rgb(190, 190, 190);
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    客服接入中...
+</body>
+<script type="text/javascript" src="js/bridge_new-c384f5689f.js"></script>
+<script src="https://qiyukf.com/script/6ca3fffadf7303c72026815b5e78b911.js"></script>
+<script>
+    document.getElementById('YSF-BTN-HOLDER').style.display = 'none';
+    HybridApi.init();
+    HybridApi.getDeviceInfo(function(data){
+        ysf.config({
+            uid: data.userId,
+            data:JSON.stringify([
+                {"index":0, "key":"userId", "label":"用户ID", "value":data.userId},
+                {"index":1, "key":"version", "label":"app版本", "value":data.version},
+                {"index":2, "key":"versionCode","label":"verCode","value":data.versionCode},
+                {"index":3, "key":"channel", "label":"channel", "value":data.channel},
+                {"index":4, "key":"deviceModel", "label":"手机型号", "value":data.deviceModel},
+                {"index":5, "key":"systemVersion","label":"系统版本","value":data.systemVersion}
+            ]),
+            success: function(){     // 成功回调
+                console.log(1);
+                window.location.href = ysf.url();
+                // self.kfUrl = ysf.url();
+            },
+            error: function(){       // 错误回调
+                console.log(2);
+                window.location.href = ysf.url();
+                // handle error
+                // self.kfUrl = ysf.url();
+            }
+        });
+    })
+</script>
+</html>

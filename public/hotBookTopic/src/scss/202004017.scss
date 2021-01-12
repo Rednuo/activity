@@ -1,0 +1,48 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+$px2vw:7.5/1vw;
+body{
+    background-color: rgba(234, 240, 237, .8);
+}
+.J_pageWraper {
+    font-size: 0;
+    img {
+        width: 100%;
+        border: none;
+    }
+    .img-2{
+        position: relative;
+        width: 750/$px2vw;
+        height: 630/$px2vw;
+        background: url('../image/202004017/img_02.png') no-repeat 0 0 / cover;
+        span{
+            position: absolute;
+            top: 210/$px2vw;
+            right: 70/$px2vw;
+            width: 160/$px2vw;
+            height: 80/$px2vw;
+            background: url('../image/202004017/img_07.png') no-repeat;
+            background-position: center;
+            background-size: 112/$px2vw 44/$px2vw;
+        }
+    }
+    .btn {
+        position: fixed;
+        width: 100%;
+        box-sizing: border-box;
+        left: 0;
+        bottom: 0;
+        background-color: #d4d4c3;
+        text-align: center;
+        padding: 15/$px2vw 0;
+        img{
+            width: auto;
+            height: 82/$px2vw;
+        }
+    }
+    
+}
+body .c-toast span{
+    height: auto;
+}

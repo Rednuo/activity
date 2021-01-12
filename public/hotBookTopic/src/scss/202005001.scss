@@ -1,0 +1,109 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+$px2vw:7.5/1vw;
+body{
+    background-color: #a52b14;
+}
+.J_pageWraper {
+    font-size: 0;
+    padding-bottom: 141/$px2vw;
+    img {
+        width: 100%;
+        border: none;
+        margin-bottom: -1px;
+    }
+    .book {
+        position: relative;
+        height: 619/$px2vw;
+        width: 100%;
+        background-image: url(../image/202005001/img_02.png);
+        background-size: 100% 100%;
+        margin-bottom: -1px;
+        span {
+            position: absolute;
+            left: 504/$px2vw;
+            top: 232/$px2vw;
+            width: 142/$px2vw;
+            height: 56/$px2vw;
+        }
+    }
+    .comments {
+        position: relative;
+        height: 289/$px2vw;
+        width: 100%;
+        background-image: url(../image/202005001/img_05.png);
+        background-size: 100% 100%;
+        margin-bottom: -1px;
+        font-size: 26/$px2vw;
+        color: #8a8989;
+        line-height: 34/$px2vw;
+        .inner {
+            position: absolute;
+            top: 120/$px2vw;
+            left: 88/$px2vw;
+            right: 88/$px2vw;
+            bottom: 48/$px2vw;
+            .swiper-container {
+                width: 100%;
+                height: 100%;
+                .swiper-pagination {
+                    text-align: right;
+                    span {
+                        width: 14/$px2vw;
+                        height: 14/$px2vw;
+                        background: #a0a0a0;
+                        margin-left: 10/$px2vw;
+                    }
+                    .swiper-pagination-bullet-active {
+                        background: #f1ae9b;
+                    }
+                }
+            }
+        }
+    }
+    .bookList {
+        position: relative;
+        height: 935/$px2vw;
+        width: 100%;
+        background-image: url(../image/202005001/img_06.png);
+        background-size: 100% 100%;
+        margin-bottom: -1px;
+        div {
+            position: absolute;
+            height: 206/$px2vw;
+            width: 750/$px2vw;
+            &:nth-of-type(1) {
+                left: 0;
+                top: 94/$px2vw;
+            }
+            &:nth-of-type(2) {
+                left: 0;
+                top: 324/$px2vw;
+            }
+            &:nth-of-type(3) {  
+                left: 0;
+                top: 556/$px2vw;
+            }
+        }
+    }
+    .btn {
+        position: fixed;
+        width: 100%;
+        box-sizing: border-box;
+        left: 0;
+        bottom: 0;
+        background-color: #a52b14;
+        background-size: 100% 100%;
+        text-align: center;
+        padding: 0;
+        z-index: 999;
+        img{
+            width: auto;
+            height: 141/$px2vw;
+        }
+    }
+}
+.c-toast span {
+    height: 0.28rem !important;
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+
+<head>
+  <meta charset="UTF-8">
+  <title>欧气许愿瓶</title>
+  <!-- rem -->
+  <script>
+    ! function (e) {
+      function t(a) {
+        if (i[a]) return i[a].exports;
+        var n = i[a] = {
+          exports: {},
+          id: a,
+          loaded: !1
+        };
+        return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports
+      }
+      var i = {};
+      return t.m = e, t.c = i, t.p = "", t(0)
+    }([function (e, t) {
+      "use strict";
+      Object.defineProperty(t, "__esModule", {
+        value: !0
+      });
+      var i = window;
+      t["default"] = i.flex = function (normal, e, t) {
+        var a = e || 100,
+          n = t || 1,
+          r = i.document,
+          o = navigator.userAgent,
+          d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),
+          l = o.match(/U3\/((\d+|\.){5,})/i),
+          c = l && parseInt(l[1].split(".").join(""), 10) >= 80,
+          p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi),
+          s = i.devicePixelRatio || 1;
+        p || d && d[1] > 534 || c || (s = 1);
+        var u = normal ? 1 : 1 / s,
+          m = r.querySelector('meta[name="viewport"]');
+        m || (m = r.createElement("meta"), m.setAttribute("name", "viewport"), r.head.appendChild(m)), m
+          .setAttribute("content", "width=device-width,user-scalable=no,initial-scale=" + u + ",maximum-scale=" +
+            u + ",minimum-scale=" + u), r.documentElement.style.fontSize = normal ? "50px" : a / 2 * s * n + "px"
+      }, e.exports = t["default"]
+    }]);
+    flex(false, 100, 1);
+  </script>
+  <script>
+    if (location.protocol == 'https:') {
+      document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+    }
+  </script>
+    <script>
+      var _czc = _czc || [];
+      _czc.push(["_setAccount", "1279198006"]);
+  </script>
+  <!-- <script type="text/javascript" src="https://statics.zhuishushenqi.com/vconsole.min.js"></script>
+  <script>
+    // 初始化vConsole
+    window.vConsole = new window.VConsole({
+      defaultPlugins: ['system', 'network', 'element', 'storage'], // 可以在此设定要默认加载的面板
+      maxLogNumber: 1000,
+      // disableLogScrolling: true,
+      onReady: function () {
+        console.log('vConsole is ready.');
+        console.log(navigator.userAgent);
+      },
+      onClearLog: function () {
+        console.log('on clearLog');
+      }
+    });
+  </script> -->
+<link href="./dist/css/20201001-mhdq.css" rel="stylesheet"></head>
+
+<body>
+  <div class="page-index-wraper" id="J_pageWraper" v-cloak>
+    <img class="title-img" src="/public/mhd/luckDraw/dist/image/title_daquan.1a6d4f7f.png">
+    <span class="tip-status">{{tipTxt}}</span>
+    <div class="content">
+      <div class="content-bg"></div>
+      <div class="progress-wrapper">
+        <div class="progress-inner">
+          <span class="progress" :style="{width:(allouqi/6666*100)+'%'}"></span>
+          <span class="progress-text">{{allouqi}}/6666</span>
+        </div>
+      </div>
+      <div class="bottle" :class="isShake?'shake':''"></div>
+    </div>
+    <div class="btn" v-if="allouqi > 6665">
+      <span @click="lucklyGift()">欧气已满！立即开奖！</span>
+    </div>
+    <div class="btn" v-else>
+      <span @click="showExchange()">注入更多欧气</span>
+      <span>积分可以1:1兑换欧气</span>
+    </div>
+    <p class="tips">
+      <span>攒到6666就能开奖</span>
+      <span>8天都来，必定获得6666</span>
+      <span>注入积分提前攒满欧气!</span>
+    </p>
+    <img class="title-icon" src="/public/mhd/luckDraw/dist/image/title_gift.aeb710ae.png">
+    <div class="gift-wrapper">
+      <div>
+        <img src="/public/mhd/luckDraw/dist/image/list_baozhen.bbe8782d.png">
+        <span>抱枕</span>
+      </div>
+      <div>
+        <img src="/public/mhd/luckDraw/dist/image/list_dzz.9e313416.png">
+        <span>大主宰相册</span>
+      </div>
+      <div>
+        <img src="/public/mhd/luckDraw/dist/image/list_jifen.c6ce6987.png">
+        <span>积分</span>
+      </div>
+    </div>
+    <img class="title-icon" src="/public/mhd/luckDraw/dist/image/title_rule.1fc197be.png">
+    <div class="rule-wrapper">
+      <p>1.本次活动时间：2020年10月1日-10月8日</p>
+      <p>2.活动期间，<span>欧气值集满6666可以立即开奖，中奖概率是百分百。</span></p>
+      <p>3.每天首次进入活动页面，可以随机获得欧气值；用积分可以兑换欧气值，兑换比例是1:1，每个账号每天最多兑换888积分。</p>
+      <p>4. <span> 连续8天打开活动页面，必定集满6666欧气值。</span></p>
+      <p>4.虚拟奖品有效期为14天，抽中后直接发放至个人账户，即时生效。</p>
+      <p>5.实物奖品数量有限，抽完为止；福袋中的奖品随机发放；抱枕款式随机。</p>
+      <p>6.抽到实物奖品后，请要 <span>加QQ 3379268566登记领奖和快递信息</span>，最晚领奖登记截止到10月15日。如因用户资料有误或者未能及时联系，导致奖品无法发放，主办方不对由此产生的任何后果负责。</p>
+      <p>7.实物奖品将会在活动结束后的15个工作日内进行发放，仅限江沪浙地区包邮。</p>
+      <p>8.本活动为漫画免费大全享有，本活动最终解释权归漫画免费大全所有。</p>
+      <p>9.使用任何舞弊行为或者恶意刷奖行为的用户，一经发现立即取消获奖资格。</p>
+    </div>
+
+<!-- 签到欧气 -->
+    <div class="modal_mask" v-show="showModalOq">
+      <div class="modal_content ouqi">
+        <span class="close" @click="showModalOq = false;"></span>
+        <div class="title">恭喜获得</div>
+        <div class="item">
+          <div class="content">
+            <span class="icon"></span>
+            <span class="ouqi_num">+{{ouqiInfo.todayouqi}}</span>
+            <span class="txt">欧气</span>
+          </div>
+          <p class="tip">距离目标更近一步了~</p>
+        </div>
+
+        <div class="btn_wrapper" @click="showModalOq = false;">知道了</div>
+      </div>
+    </div>
+
+<!-- 兑换欧气 -->
+    <div class="modal_mask" v-show="showModalExchange">
+      <div class="modal_content exchange">
+        <span class="close" @click="showModalExchange = false;"></span>
+        <div class="title">兑换欧气</div>
+        <div class="item">
+          <div class="content">
+            <p class="item-title">请输入积分额度</p>
+            <input type="text" v-model="sugarNum">
+            <p class="sugar_num">账户积分余额：{{accountInfo.usingpresentad}}</p>
+          </div>
+          <p class="tip">*每个用户每天最多兑换888积分</p>
+        </div>
+        <div class="btn_wrapper" @click="exchangeOuqi(sugarNum)">立即兑换</div>
+      </div>
+    </div>
+<!-- 大主宰相册 -->
+    <div class="modal_mask" v-show="showModalDzz">
+      <div class="modal_content dzz">
+        <div class="title">恭喜获得</div>
+        <div class="item">
+          <div class="content">
+            <img src="/public/mhd/luckDraw/dist/image/list_dzz.9e313416.png" alt="">
+            <p class="sugar_num">大主宰画册 <span>x1</span></p>
+          </div>
+          <p class="tip">联系QQ3379268566登记快递信息</p>
+        </div>
+        <div class="btn_wrapper" @click="showModalDzz = false;">知道了</div>
+      </div>
+    </div>
+<!-- 抱枕 -->
+    <div class="modal_mask" v-show="showModalBz">
+      <div class="modal_content bz">
+        <div class="title">恭喜获得</div>
+        <div class="item">
+          <div class="content">
+            <img src="/public/mhd/luckDraw/dist/image/list_baozhen.bbe8782d.png" alt="">
+            <p class="sugar_num">人气抱枕 <span>x1</span></p>
+          </div>
+          <p class="tip">款式规格随机 <br>
+            联系QQ3379268566登记快递信息</p>
+        </div>
+        <div class="btn_wrapper" @click="showModalBz = false;">知道了</div>
+      </div>
+    </div>
+<!-- 积分 -->
+    <div class="modal_mask" v-show="showModalYqt">
+      <div class="modal_content yqt">
+        <div class="title">恭喜获得</div>
+        <div class="item">
+          <div class="content">
+            <img src="/public/mhd/luckDraw/dist/image/list_jifen.c6ce6987.png" alt="">
+            <p class="sugar_num">积分 <span>x{{parseInt(currentGift.name)}}</span></p>
+          </div>
+        </div>
+        <div class="btn_wrapper" @click="showModalYqt = false;">知道了</div>
+      </div>
+    </div>
+
+  </div>
+<script type="text/javascript" src="./dist/js/vendors.js"></script><script type="text/javascript" src="./dist/js/20201001-mhdq.js"></script></body>
+
+</html>

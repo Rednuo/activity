@@ -1,0 +1,18 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+.J_pageWraper {
+    font-size: 0;
+    img {
+        width: 100%;
+        border: none;
+    }
+    .recommend-book{
+        display: flex;
+        background: #333042;
+        padding:0 15/$px2rem 30/$px2rem 15/$px2rem;
+        p{
+            flex:1;
+        }
+    }
+}

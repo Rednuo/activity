@@ -1,0 +1,62 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+$px2vw: 7.5 / 1vw ;
+.J_pageWraper{
+    font-size: 0;
+    padding-bottom: 180/$px2vw;
+    background: #e2e3e5 url('../image/201905015/bg-r.png') no-repeat;
+    background-position: 0 bottom;
+    background-size: contain;
+    img{
+        width: 100%;
+    }
+    .img-3-2,.img-3-3,.img-3-4{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 130/$px2vw;
+        padding-top: 10/$px2vw;
+        text-align: center;
+        span{
+            font-size: 24/$px2vw;
+            background: linear-gradient(to right,#d70000, #ec7c00);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            text-shadow: 0 0 1/$px2vw 0 #fff;
+        }
+        
+    }
+    .img-3-2{
+        background: url('../image/201905015/img-3-2-1.jpg') no-repeat 0 0 / contain;
+    }
+    .img-3-3{
+        background: url('../image/201905015/img-3-3-1.jpg') no-repeat 0 0 / contain;
+    }
+    .img-3-4{
+        height: 98/$px2vw;
+        background: url('../image/201905015/img-3-3-3.jpg') no-repeat 0 bottom / contain;
+    }
+    .books{
+        padding: 0 50/$px2vw;
+        .book{
+            display: inline-block;
+            width: 33.3%;
+            
+            vertical-align: top;
+            margin-bottom: 22/$px2vw;
+            .cover{
+                width: 192/$px2vw;
+                height: 274/$px2vw;
+                margin: 0 auto;
+                background-color: #fff;
+                img{
+                    height: 100%;
+                }
+            }
+            
+        }
+    }
+    
+}

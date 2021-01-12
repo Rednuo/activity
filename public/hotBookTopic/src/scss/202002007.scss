@@ -1,0 +1,46 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+$px2vw:7.5/1vw;
+.J_pageWraper {
+    font-size: 0;
+    img {
+        width: 100%;
+        border: none;
+    }
+    .wrapper {
+        position: relative;
+        width: 100%;
+        height: 465/$px2vw;
+        background-image: url(../image/202002004/img_02.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        div {
+            position: absolute;
+            width: 375/$px2vw;
+            height: 100%;
+            &:nth-child(1) {
+                left: 0;
+                top: 0;
+            }
+            &:nth-child(2) {
+                left: 375/$px2vw;
+                top: 0;
+            }
+        }
+    }
+    .btn {
+        position: fixed;
+        width: 100%;
+        box-sizing: border-box;
+        left: 0;
+        bottom: 0;
+        background-color:rgba(213,233,245,0.8);
+        text-align: center;
+        padding: 16/$px2vw 0;
+        img{
+            width: auto;
+            height: 88/$px2vw;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+$px2vw:7.5/1vw;
+.J_pageWraper {
+    font-size: 0;
+    img {
+        width: 100%;
+        border: none;
+        margin-bottom: -1px;
+    }
+    .book {
+        position: relative;
+        height: 807/$px2vw;
+        width: 100%;
+        background-image: url(../image/202007009/img_02.png);
+        background-size: 100% 100%;
+        margin-bottom: -1px;
+        span {
+            position: absolute;
+            right: 65/$px2vw;
+            top: 260/$px2vw;
+            width: 150/$px2vw;
+            height: 65/$px2vw;
+        }
+    }
+    .book2{
+        box-sizing: border-box;
+        height: 658/$px2vw;
+        width: 100%;
+        padding-top: 145/$px2vw;
+        padding-left: 60/$px2vw;
+        background-image: url(../image/202007009/img_05.png);
+        background-size: 100% 100%;
+        margin-bottom: -1px;
+        span {
+            display: inline-block;
+            width: 195/$px2vw;
+            height: 320/$px2vw;
+            margin-right: 20/$px2vw;
+        }
+    }
+    .btn {
+        position: fixed;
+        width: 100%;
+        box-sizing: border-box;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(255, 107, 89, .25);
+        background-size: 100% 100%;
+        text-align: center;
+        padding: 17/$px2vw 0 0/$px2vw;
+        z-index: 999;
+        img{
+            width: auto;
+            height: 111/$px2vw;
+        }
+    }
+    .c-toast span {
+        height: 0.28rem !important;
+    }
+}

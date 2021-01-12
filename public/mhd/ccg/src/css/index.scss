@@ -1,0 +1,13 @@
+@import '../../../../Common/css/mixin.scss';
+@import '../../../../Common/css/base.scss';
+
+html,body{
+  height: 100%;
+}
+.page-ccg-wraper{
+  font-size: 0;
+  img {
+    width: 100%;
+    border: none;
+  }
+}

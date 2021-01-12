@@ -1,0 +1,39 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+$px2vw:7.5/1vw;
+.J_pageWraper {
+    font-size: 0;
+    background-color: #252641;
+    img {
+        width: 100%;
+        border: none;
+    }
+    .video-wrap{
+        width: 750/$px2vw;
+        height: 384/$px2vw;
+        background: url(../image/201912001/02.png) no-repeat top center;
+        background-size: 100%;
+        overflow: hidden;
+        .video{
+            width: 660/$px2vw;
+            height: 372/$px2vw;
+            margin-left: 45/$px2vw;
+            margin-top: 7/$px2vw;
+        }
+    }
+    .btn {
+        position: fixed;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: rgba(39, 40, 68, .8);
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        padding: 8/$px2vw 0 0;
+        img{
+            width: auto;
+            height: 115/$px2vw;
+        }
+    }
+}

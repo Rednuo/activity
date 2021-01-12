@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0,minimal-ui, viewport-fit=cover" />
+    <title>收货地址</title>
+    <!-- rem -->
+    <script>
+        !function (e) { function t(a) { if (i[a]) return i[a].exports; var n = i[a] = { exports: {}, id: a, loaded: !1 }; return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports } var i = {}; return t.m = e, t.c = i, t.p = "", t(0) }([function (e, t) { "use strict"; Object.defineProperty(t, "__esModule", { value: !0 }); var i = window; t["default"] = i.flex = function (normal, e, t) { var a = e || 100, n = t || 1, r = i.document, o = navigator.userAgent, d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i), l = o.match(/U3\/((\d+|\.){5,})/i), c = l && parseInt(l[1].split(".").join(""), 10) >= 80, p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi), s = i.devicePixelRatio || 1; p || d && d[1] > 534 || c || (s = 1); var u = normal ? 1 : 1 / s, m = r.querySelector('meta[name="viewport"]'); m || (m = r.createElement("meta"), m.setAttribute("name", "viewport"), r.head.appendChild(m)), m.setAttribute("content", "width=device-width,user-scalable=no,initial-scale=" + u + ",maximum-scale=" + u + ",minimum-scale=" + u + ",viewport-fit=cover"), r.documentElement.style.fontSize = normal ? "50px" : a / 2 * s * n + "px" }, e.exports = t["default"] }]); flex(false, 100, 1);
+    </script>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script>
+<link href="./dist/css/index.css" rel="stylesheet"></head>
+
+<body>
+    <div class="page-wraper" id="J_pageWraper" v-cloak>
+        <img class="avatar" :src="avatar" alt="">
+        <span class="nickname">{{nickName}}</span>
+
+        <div :class="['address-content', isEdit ? 'edit' : '']">
+            <div>
+                <label for="">收货人</label>
+                <input type="text" v-model="address_name" placeholder="收货人姓名" v-if="isEdit">
+                <span v-else>{{address_name}}</span>
+            </div>
+            <div>
+                <label for="">手机号</label>
+                <input type="text" v-model="address_phone" placeholder="收货人手机号" v-if="isEdit">
+                <span v-else>{{address_phone}}</span>
+            </div>
+            <div>
+                <label for="">地区</label>
+                <span v-if="isEdit" @click="isAddrPick = true;">{{city || '点击选择'}}</span>
+                <span v-else>{{city || '请选择'}}</span>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAQCAQAAACFdibLAAAAe0lEQVR4nGNYK7n6wFojBlSwes/q/2ver7ZCEVwuu+bm6v+rP692RhHeKL760ur/q7+v80ERXiW06tTq/6t+rQpHEV7Ct/rQ6v+r/6xJQhGeybVmx+r/q/+uzkU1hG3V+tX/1/xbXYlfEIt2LBZhcRIWx2P1JtYAwRZ0AN2cXzWCXBnFAAAAAElFTkSuQmCC" v-if="isEdit" @click="isAddrPick = true;">
+            </div>
+            <div>
+                <label for="">详细地址</label>
+                <textarea class="detail" type="text" v-model="addr[3]" placeholder="如道路、门牌号、小区、楼栋号、单元室等" v-if="isEdit" rows="2" maxlength="500"></textarea>
+                <textarea class="detail" type="text" v-model="addr[3]" placeholder="如道路、门牌号、小区、楼栋号、单元室等" v-else rows="2" maxlength="500" readonly></textarea>
+            </div>
+            <span class="btn" @click="postAccountInfo" v-if="isEdit">确认信息</span>
+            <span class="btn" @click="isEdit = true;" v-else>修改地址信息</span>
+        </div>
+        <div class="mask" v-if="isEdit && isAddrPick" @click.self="isAddrPick = false;">
+            <v-distpicker type="mobile" @selected="onSelectAddr" v-if="isEdit && isAddrPick"></v-distpicker>
+        </div>
+    </div>
+<script type="text/javascript" src="./dist/js/vendors.js"></script><script type="text/javascript" src="./dist/js/index.js"></script></body>
+
+</html>

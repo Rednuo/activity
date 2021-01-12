@@ -1,0 +1,18 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+
+.J_pageWraper {
+    font-size: 0;
+    background-color: #fff;
+    img {
+        width: 100%;
+        border: none;
+    }
+    .btn {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+}

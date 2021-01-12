@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>爆款书籍</title>
+    <script>
+    !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u+",viewport-fit=cover"),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);
+    </script>
+    <script>
+        if (location.protocol == 'https:') {
+            document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+    </script>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script>
+</head>
+
+<body>
+    <div class="J_pageWraper" id="J_pageWraper">
+        <img src="../image/201905002/01_1.png" data-src="../image/201905002/01_1.png" alt="">
+        <div class="book1">
+            <img src="../image/201905002/02.png" data-src="../image/201905002/02.png" alt="">
+            <div class="desc"  @click="showDesc=!showDesc">
+                <div class="text" :class="{'active':showDesc}">
+                    林宜上辈子是个脑子不太好的，她爱得死去活来的男人谋她家财、害她性命，她甩了三巴掌的男人却成为众人仰望、求着供着的大人物，高攀不起的她死于他的床上。<br/>
+                    重活一世，她总算活明白了，害她的她要全部报复回来，至于她踩过的男人……那位应先生，对，说的就是您，您今天又帅了，渴吗？饿吗？缺什么您开口，我愿为您做牛做马。应寒年心下奇怪，一向眼高于顶的林家小白痴最近姿态越来越低了，连衣服的领口都一件比一件低。<br/>
+                    应寒年喉咙发痒：做牛做马就算了，做我女人。林宜：别别别，我只是想抱大腿，没想过再赔一次身子。应寒年眯起眼：嗯？再？
+                </div>
+            </div>
+            <div class="desc_bot" @click="showDesc=!showDesc">{{showDesc?'收起':'展开全部'}}<i :class="showDesc?'up':'down'"></i></div>
+            <p class="countdown" v-cloak>
+                <span class="time" v-for="(item) in hour">{{item}}</span>
+                <span>:</span>
+                <span class="time" v-for="(item) in min">{{item}}</span>
+                <span>:</span>
+                <span class="time" v-for="(item) in sec">{{item}}</span>
+            </p>
+            <div class="bot">
+                <img src="../image/201905002/04.png" data-src="../image/201905002/04.png" alt="">
+                <div @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':'5c6fd0eb7af6804ec436941c','code':'B1##-1|5c6fd0eb7af6804ec436941c##千金重生：心机总裁套路深##-1##-1##201905002$__$爆款书籍##-1##-1##-1'}})"></div>
+            </div>
+        </div>
+        <div class="book2">
+            <img src="../image/201905002/05.png" data-src="../image/201905002/05.png" alt="">
+            <div class="book2_1" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':'565eb8b6ee29375343dbf85a','code':'B1##-1|565eb8b6ee29375343dbf85a##总裁在上我在下##-1##-1##201905002$__$爆款书籍##-1##-1##-1'}})"></div>
+            <div class="book2_2" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':'5c6fcfcc3e8eb52e7eed0d8f','code':'B1##-1|5c6fcfcc3e8eb52e7eed0d8f##我家总裁有猫病##-1##-1##201905002$__$爆款书籍##-1##-1##-1'}})"></div>
+        </div>
+        <div class="book3">
+            <img src="../image/201905002/06.png" data-src="../image/201905002/06.png" alt="">
+            <div class="books">
+                <div class="book" v-for="(book,book_index) in bookList" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':book._id,'code':'B1##-1|'+book._id+'##'+book.title+'##-1##-1##201905002$__$爆款书籍##-1##-1##-1'}})">
+                    <div class="cover">
+                        <img :src="book.cover+'?imageMogr2/thumbnail/288x408'" alt="">
+                    </div>
+                    <p class="name" v-cloak>{{book.title}}</p>
+                    <p class="author" v-cloak>{{book.author}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display:none;">
+        <script type="text/javascript" src="https://s4.cnzz.com/z_stat.php?id=1261312741&web_id=1261312741"></script>
+    </div>
+</body>
+
+
+</html>

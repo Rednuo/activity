@@ -1,0 +1,15 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+.J_pageWraper {
+    font-size: 0;
+    background: #fff;
+    img {
+        width: 100%;
+        border: none;
+    }
+    .history-list{
+        font-size: 0;
+        padding:20/$px2rem 40/$px2rem 40/$px2rem 40/$px2rem;
+    }
+}

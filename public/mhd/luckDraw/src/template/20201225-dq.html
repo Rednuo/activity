@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+
+<head>
+  <meta charset="UTF-8">
+  <title>八天长假 多重福利</title>
+  <!-- rem -->
+  <script>
+    ! function (e) {
+      function t(a) {
+        if (i[a]) return i[a].exports;
+        var n = i[a] = {
+          exports: {},
+          id: a,
+          loaded: !1
+        };
+        return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports
+      }
+      var i = {};
+      return t.m = e, t.c = i, t.p = "", t(0)
+    }([function (e, t) {
+      "use strict";
+      Object.defineProperty(t, "__esModule", {
+        value: !0
+      });
+      var i = window;
+      t["default"] = i.flex = function (normal, e, t) {
+        var a = e || 100,
+          n = t || 1,
+          r = i.document,
+          o = navigator.userAgent,
+          d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),
+          l = o.match(/U3\/((\d+|\.){5,})/i),
+          c = l && parseInt(l[1].split(".").join(""), 10) >= 80,
+          p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi),
+          s = i.devicePixelRatio || 1;
+        p || d && d[1] > 534 || c || (s = 1);
+        var u = normal ? 1 : 1 / s,
+          m = r.querySelector('meta[name="viewport"]');
+        m || (m = r.createElement("meta"), m.setAttribute("name", "viewport"), r.head.appendChild(m)), m
+          .setAttribute("content", "width=device-width,user-scalable=no,initial-scale=" + u + ",maximum-scale=" +
+            u + ",minimum-scale=" + u), r.documentElement.style.fontSize = normal ? "50px" : a / 2 * s * n + "px"
+      }, e.exports = t["default"]
+    }]);
+    flex(false, 100, 1);
+  </script>
+  <script>
+    if (location.protocol == 'https:') {
+      document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+    }
+  </script>
+  <script>
+      var _czc = _czc || [];
+      _czc.push(["_setAccount", "1279198006"]);
+  </script>
+  <!-- <script type="text/javascript" src="http://statics.zhuishushenqi.com/vconsole.min.js"></script>
+  <script>
+    // 初始化vConsole
+    window.vConsole = new window.VConsole({
+      defaultPlugins: ['system', 'network', 'element', 'storage'], // 可以在此设定要默认加载的面板
+      maxLogNumber: 1000,
+      // disableLogScrolling: true,
+      onReady: function () {
+        console.log('vConsole is ready.');
+        console.log(navigator.userAgent);
+      },
+      onClearLog: function () {
+        console.log('on clearLog');
+      }
+    });
+  </script> -->
+</head>
+
+<body>
+  <div class="page-index-wraper" id="J_pageWraper" v-cloak>
+    <div class="goLottery" @click="goLottery()">
+      <img src="../img/20201225-mhd/icon-lottery.gif" alt="">
+    </div>
+    <div class="dialog" v-show="dialogItem">{{dialogItem}}<i class="arrow"></i></div>
+    <img class="top" src="../img/20201225-mhd/top.png">
+    <img class="topdes" src="../img/20201225-mhd/dq/icon-top.png" alt="">
+    <div class="content">
+      <div class="tabs">
+        <span>
+          签到累计达到3天、7天、11天 <br>
+          分别可以参与瓜分10万、50万、100万积分
+        </span>
+      </div>
+      <div class="signday">已签到：<span>{{signedLen || 0}}</span> 天</div>
+      <div class="content-inner">
+        <!-- <div class="title-manhuaquan">连续八天打卡，就能瓜分百万漫画券</div> -->
+        <!-- <div class="card-wrapper">
+          <div :class="['card', item.signed ? 'signed' : '']" v-for="(item,index) in signList" @click="onClickCard(item)">
+            <span class="date">{{item.date | date}}</span>
+            <img v-if="!item.signed && index == 7" src="../img/20201001-mhd/icon_gift.png">
+            <span v-else>{{item.signed ? '已签到' : new Date(item.date) < new Date(currentDate) ? '补':'签'}}</span>
+          </div>
+        </div> -->
+        <div class="card-wrapper">
+          <div :class="['card',index==10?'des11':'']" v-for="(item,index) in signList" @click="onClickCard(item)">
+            <!-- 最后一天 -->
+            <img v-if="index==10" src="../img/20201225-mhd/dq/des11.png">
+            <!-- 补签 -->
+            <img v-else-if="item.isrepairsign && item.isSign==false" src="../img/20201225-mhd/dq/icon-update.png">
+
+            <!-- 已签 -->
+            <img v-else-if="item.isSign" src="../img/20201225-mhd/dq/icon-signed.png">
+            <!-- 未签 -->
+            <img v-else src="../img/20201225-mhd/dq/icon-signing.png">
+            <span class="date">第{{index+1}}天 {{item.isrepairsign}}{{item.isSign==false}}</span>
+            <div v-if="item.guafenamount==10 && index!==10" class="des3"></div>
+            <div v-if="item.guafenamount==50 && index!==10" class="des7"></div>
+          </div>
+        </div>
+        <template>
+          <div class="btn disabled" v-if="new Date('2020/01/03 20:08:00') < currentTime">活动已结束</div>
+          <div class="btn" v-else-if="!isSignUp" @click="CreateBaoMing()"><p>我要参与瓜分</p> <span>（积分*30）</span></div>
+          <div class="btn disabled" v-else-if="new Date('2020/12/25 20:08:00') > currentTime">1月3日20:08开奖</div>
+          <div class="btn disabled" v-else>奖励已领取</div>
+        </template>
+      </div>
+    </div>
+    <div class="rule-wrapper">
+      <h1 class="title">活动规则</h1>
+      <ul>
+        <li>本次活动时间：2020年12月24日-2021年1月3日</li>
+        <li>活动期间，在页面完成签到可以获得大额积分，积分有效期为14天。 <br>
+            累计3天都在页面完成签到的用户可以平分100000积分<br>
+            累计7天都在页面完成签到的用户可以平分500000积分<br>
+            累计11天都在页面完成签到的用户可以平分1000000积分 <br>
+            注：三次瓜分不能叠加，如果同时符合三次瓜分条件，瓜分最高的一档。
+          </li>
+        <li>需要先消耗30积分获得入场资格。</li>
+        <li>如果忘记签到，可以用积分补签。第一次补签只需10积分，第二次是20积分，以此类推。</li>
+        <li>补签和签到都在1月3日晚上20点结束</li>
+        <li>开奖时间为1月3日晚上20点08分，奖励由系统自动发放到账户。</li>
+        <li>活动期间，在页面完成1次签到或者1次补签，就可以免费抽奖1次。免费抽奖机会仅当天有效，过期失效。</li>
+        <li>虚拟奖品有效期为14天，抽中后直接发放至个人账户，即时生效。</li>
+        <li>实物奖品数量有限，抽完为止；福袋中的奖品随机发放；抱枕款式随机。</li>
+        <li>抽到实物奖品后，请要加QQ 3379268566登记领奖和快递信息。最晚领奖登记截止到2021年1月15日，请注意时间过期不候。如因用户资料有误或者错过领奖登记最晚截止期而错失奖品，主办方不对由此产生的任何后果负责。</li>
+        <li>实物奖品将会在活动结束后的15个工作日内进行发放，仅限江沪浙地区包邮。</li>
+        <li>本活动为大全APP享有，本活动最终解释权归大全所有。</li>
+        <li>使用任何舞弊行为或者利用漏洞恶意刷奖行为的用户，一经发现立即取消获奖资格。</li>
+      </ul>
+    </div>
+    <!-- 余额不足 -->
+    <div class="modal_mask" v-show="isEnough">
+      <div class="modal_content" class="notEnough">
+        <div class="close" @click="isEnough=false"></div>
+        <div class="dec"></div>
+        <p class="title">哎呀，余额不足</p>
+        <img src="../img/20201225-mhd/no-gift.png" alt="">
+        <p class="tip">账户余额不足 <br> 去任务中心赚积分</p>
+        <div class="btn-wrapper">
+          <span @click="openTaskCenter();isEnough=false">去任务中心</span>
+        </div>
+      </div>
+    </div>
+    <!-- 成功参与瓜分 -->
+    <div class="modal_mask" v-show="baoMing">
+      <div class="modal_content" class="notEnough">
+        <div class="close" @click="baoMing=false"></div>
+        <div class="dec"></div>
+        <p class="title">成功参与瓜分</p>
+        <img src="../img/20201225-mhd/dq/icon_gift.png" alt="">
+        <p class="tip">完成11天签到成功 <br> 瓜分时间：1月3日 20:08</p>
+        <div class="btn-wrapper">
+          <span @click="baoMing = false;">知道了</span>
+        </div>
+      </div>
+    </div>
+    <!-- 签到成功 -->
+    <div class="modal_mask" v-show="signSuccess">
+      <div class="modal_content" class="notEnough">
+        <div class="close" @click="signSuccess=false"></div>
+        <div class="dec"></div>
+        <p class="title">签到成功</p>
+        <img src="../img/20201225-mhd/dq/success.png" alt="">
+        <p class="tip">获得1次免费抽奖</p>
+        <div class="btn-wrapper">
+          <span @click="goLottery();signSuccess=false;">去抽奖</span>
+        </div>
+      </div>
+    </div>
+    <!-- 补签 -->
+    <div class="modal_mask" v-show="signAdd">
+      <div class="modal_content" class="notEnough">
+        <div class="close" @click="signAdd=false"></div>
+        <div class="dec"></div>
+        <p class="title">补签</p>
+        <img src="../img/20201225-mhd/dq/add.png" alt="">
+        <p class="tip">确定用{{signCount}}积分进行补签</p>
+        <div class="btn-wrapper">
+          <span @click="Sign(currentSign, 1);signAdd = false;">确定</span>
+        </div>
+      </div>
+    </div>
+    <!-- 成功瓜分 -->
+    <div class="modal_mask" v-show="getPrize">
+        <div class="modal_content" v-if="gift" class="notEnough">
+          <div class="close" @click="getPrize=false"></div>
+          <div class="dec"></div>
+          <p class="title">恭喜成功瓜分</p>
+          <img src="../img/20201225-mhd/dq/icon-quan.png" alt="">
+          <p class="tip">瓜分{{gift}}积分</p>
+          <div class="btn-wrapper">
+            <span @click="getPrize=false">收下奖励</span>
+          </div>
+        </div>
+        <div class="modal_content" v-else class="notEnough">
+          <div class="close" @click="getPrize=false"></div>
+          <div class="dec"></div>
+          <p class="title">非常遗憾</p>
+          <img src="../img/20201225-mhd/no-gift.png" alt="">
+          <p class="tip">未满足领奖条件<br>下次加油啊~</p>
+          <div class="btn-wrapper">
+            <span @click="getPrize=false">知道了</span>
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+
+</html>

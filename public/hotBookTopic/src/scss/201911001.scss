@@ -1,0 +1,30 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+$px2vw:7.5/1vw;
+.J_pageWraper {
+    font-size: 0;
+    background-color: #c7c0e7;
+    padding-bottom: 120/$px2vw;
+    img {
+        width: 100%;
+        border: none;
+        margin-top: -1/$px2vw;
+
+    }
+    .btn {
+        position: fixed;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: rgba(199,192,231,0.75);
+        background-size: 100%;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        padding: 12/$px2vw 0 12/$px2vw;
+        img{
+            width: auto;
+            height: 110/$px2vw;
+        }
+    }
+}

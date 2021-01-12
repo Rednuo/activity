@@ -1,0 +1,24 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+.J_pageWraper {
+    font-size: 0;
+    background: #eae7f2;
+    img {
+        width: 100%;
+        border: none;
+    }
+    .history-list{
+        font-size: 0;
+    }
+    .read-button{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 9999;
+        width:100%;
+        height: 130/$px2rem;
+        background: url('../image/201907004/_11.jpg') center center no-repeat;
+        background-size: cover;
+    }
+}

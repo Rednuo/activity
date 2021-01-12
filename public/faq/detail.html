@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+    <title>帮助与反馈</title>
+    <script type="text/javascript">
+        !function (a, b) { function c() { var b = f.getBoundingClientRect().width; b / i > 540 && (b = 540 * i); var c = b / 10; f.style.fontSize = c + "px", k.rem = a.rem = c } var d, e = a.document, f = e.documentElement, g = e.querySelector('meta[name="viewport"]'), h = e.querySelector('meta[name="flexible"]'), i = 0, j = 0, k = b.flexible || (b.flexible = {}); if (g) { console.warn("将根据已有的meta标签来设置缩放比例"); var l = g.getAttribute("content").match(/initial\-scale=([\d\.]+)/); l && (j = parseFloat(l[1]), i = parseInt(1 / j)) } else if (h) { var m = h.getAttribute("content"); if (m) { var n = m.match(/initial\-dpr=([\d\.]+)/), o = m.match(/maximum\-dpr=([\d\.]+)/); n && (i = parseFloat(n[1]), j = parseFloat((1 / i).toFixed(2))), o && (i = parseFloat(o[1]), j = parseFloat((1 / i).toFixed(2))) } } if (!i && !j) { var p = (a.navigator.appVersion.match(/android/gi), a.navigator.appVersion.match(/iphone/gi)), q = a.devicePixelRatio; i = p ? q >= 3 && (!i || i >= 3) ? 3 : q >= 2 && (!i || i >= 2) ? 2 : 1 : 1, j = 1 / i } if (f.setAttribute("data-dpr", i), !g) if (g = e.createElement("meta"), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + j + ", maximum-scale=" + j + ", minimum-scale=" + j + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g); else { var r = e.createElement("div"); r.appendChild(g), e.write(r.innerHTML) } a.addEventListener("resize", function () { clearTimeout(d), d = setTimeout(c, 300) }, !1), a.addEventListener("pageshow", function (a) { a.persisted && (clearTimeout(d), d = setTimeout(c, 300)) }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function () { e.body.style.fontSize = 12 * i + "px" }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function (a) { var b = parseFloat(a) * this.rem; return "string" == typeof a && a.match(/rem$/) && (b += "px"), b }, k.px2rem = function (a) { var b = parseFloat(a) / this.rem; return "string" == typeof a && a.match(/px$/) && (b += "rem"), b } }(window, window.lib || (window.lib = {}));
+    </script>
+    <script>
+        if(location.protocol == 'https:'){
+            document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+    </script>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-overflow-scrolling: touch;
+        -webkit-text-size-adjust: 100%;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout:none;
+        -webkit-font-smoothing: antialiased;
+        font-family: Microsoft Yahei, "Helvetica Neue", Helvetica, STHeiTi, sans-serif!important;
+    }
+    [v-cloak] {
+        display: none;
+        -webkit-transition:all 0.1s linear;
+    }
+    .page-detail{
+        padding: 0.2rem 0.42rem;
+    }
+    .page-detail .temp{
+        margin: 1.2rem 4% 0;
+        width: 92%;
+    }
+    .page-detail h1{
+        line-height: 0.84rem;
+        font-weight: normal;
+        font-size: 0.62rem;
+        color: #4B4B4B;
+        padding: 0.42rem 0;
+    }
+    .page-detail .content{
+        line-height: 0.52rem;
+        font-size: 0.4rem;
+        color: #999;
+    }
+    .page-detail .content p{
+        line-height: 0.52rem;
+        font-size: 0.4rem;
+        color: #999;
+        /* text-indent: 2em; */
+    }
+    .page-detail .content img{
+        width: 100%;
+        margin: 0.42rem 0;
+    }
+</style>
+
+<body>
+    <div class="page-detail" id="root" v-cloak>
+        <img v-if="isFetching" class="temp" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAncAAAIXAgMAAACDUJCrAAAADFBMVEUAAAD39/f39/f39/eylH6jAAAAA3RSTlMAeB7nnwpDAAABc0lEQVR42uzcsY1CURAEwR/a5R/FBYL0Dv8wBoTRiKoI2l2NtNcpu8mTt5GXIk/eSF6KPHkjeSny5I3kpciTN5KXIk/eSF6KPHkjeSm3CwAAAJ5y3utHnjx58uTJkydPnjx58uTJkydPnjx58uTJkydPnjwAAAAAAAAAAAAA+FSnLP8W9ZTJkzeSlyJP3kheijx5I3kp8uSN5KXk8wAAAMBY/5i8FHnyRvJS5MkbyUuRJ28kL0WevJG8FGM9AABAzynL37mnTJ68kbwUefJG8lLkyRvJS5EnbyQvJZ8HAABAzXnd7/WPPHny5MmTJ0/enTx58uTJkydP3t235QEAAADw184dnAAIBDAQ7L9qtQElH2HhZirYfyAAAAA4uPsiL0WevJG8FHnyRvJS5MkbyUuRJ28kL8XBHQAAAMb6N/JS5MkbyUuRJ28kL0WevJG8FHnyRvJSjPUAAAA915/kyZMnT548efLkyZMn7yFPnjx5B+Tdi91xlz1a5zwAAAAASUVORK5CYII=" alt="">
+        <h1 v-if="info">{{info.title}}</h1>
+        <div class="content" id="content"></div>      
+    </div>
+</body> 
+<div style="display: none;">
+    <script src="https://s11.cnzz.com/z_stat.php?id=1260948588&web_id=1261312741" language="JavaScript"></script>
+</div>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/vue-resource.js"></script>
+<script type="text/javascript" src="js/bridge_new.js"></script>
+<script type="text/javascript" src="js/detail.js"></script>
+</html>

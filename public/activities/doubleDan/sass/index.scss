@@ -1,0 +1,358 @@
+@import './component/mixin_640.scss';
+@import './component/base.scss';
+body {
+    overflow: visible;
+}
+[v-cloak] {
+    display: none;
+}
+@keyframes move {
+    0% {
+      transform: translateY(0/$px2rem);
+    }
+    4% {
+      transform: translateY(0/$px2rem);
+    }
+    5% {
+      transform: translateY(-5%);
+    }
+    9% {
+      transform: translateY(-5%);
+    }
+    10% {
+      transform: translateY(-10%);
+    }
+    14% {
+      transform: translateY(-10%);
+    }
+    15% {
+      transform: translateY(-15%);
+    }
+    19% {
+      transform: translateY(-15%);
+    }
+    20% {
+      transform: translateY(-20%);
+    }
+    24% {
+      transform: translateY(-20%);
+    }
+    25% {
+      transform: translateY(-25%);
+    }
+    29% {
+      transform: translateY(-25%);
+    }
+    30% {
+      transform: translateY(-30%);
+    }
+    34% {
+      transform: translateY(-30%);
+    }
+    35% {
+      transform: translateY(-35%);
+    }
+    39% {
+      transform: translateY(-35%);
+    }
+    40% {
+      transform: translateY(-40%);
+    }
+    44% {
+      transform: translateY(-40%);
+    }
+    45% {
+      transform: translateY(-45%);
+    }
+    49% {
+      transform: translateY(-45%);
+    }
+    50% {
+      transform: translateY(-50%);
+    }
+    54% {
+      transform: translateY(-50%);
+    }
+    55% {
+      transform: translateY(-55%);
+    }
+    59% {
+      transform: translateY(-55%);
+    }
+    60% {
+      transform: translateY(-60%);
+    }
+    64% {
+      transform: translateY(-60%);
+    }
+    65% {
+      transform: translateY(-65%);
+    }
+    69% {
+      transform: translateY(-65%);
+    }
+    70% {
+      transform: translateY(-70%);
+    }
+    74% {
+      transform: translateY(-70%);
+    }
+    75% {
+      transform: translateY(-75%);
+    }
+    79% {
+      transform: translateY(-75%);
+    }
+    80% {
+      transform: translateY(-80%);
+    }
+    84% {
+      transform: translateY(-80%);
+    }
+    85% {
+      transform: translateY(-85%);
+    }
+    89% {
+      transform: translateY(-85%);
+    }
+    90% {
+      transform: translateY(-90%);
+    }
+    94% {
+      transform: translateY(-90%);
+    }
+    95% {
+      transform: translateY(-95%);
+    }
+    99% {
+      transform: translateY(-95%);
+    }
+    100%{
+      transform: translateY(-100%);
+    }
+  }
+  .move {
+    -webkit-animation-name: move;
+    animation-name: move;
+  }
+
+.page-main-wraper{
+    position: relative;
+    padding: 65vw 0 10vw;
+    background: url('../img/bg-start.png') no-repeat;
+    background-size: contain;
+    background-color: rgb(203,43,6);
+    .top-bag{
+        width: 640/$px2rem;
+        height: 416/$px2rem;
+        padding-top: 90/$px2rem;
+        text-align: center;
+        margin: 0 auto 52/$px2rem;
+        background: url('../img/red-bag.png') no-repeat;
+        background-size: contain;
+        .allVouchers{
+          font-size: 76/$px2rem;
+          text-align: center;
+          color: #FFEEC6;
+          font-weight: 600;
+          text-shadow:2/$px2rem 4/$px2rem 2/$px2rem rgba(222,114,34,0.83);
+          font-style: italic;
+          span{
+            display: inline-block;
+            width: 36/$px2rem;
+            font-size: 34/$px2rem;
+            color: #FFDC88;
+            text-shadow:2/$px2rem 4/$px2rem 2/$px2rem rgba(222,114,34,0.83);
+          }
+        }
+        .allPerson{
+          font-size: 24/$px2rem;
+          color: #FF8C71;
+          text-align: center;
+        }
+        .start-btn{
+            display: inline-block;
+            width: 260/$px2rem;
+            height: 78/$px2rem;
+            margin: 80/$px2rem 0 15/$px2rem;
+            background: url('../img/start-btn.png') no-repeat;
+            background-size: contain;
+            &.done{
+                width: 268/$px2rem;
+                height: 88/$px2rem;
+                margin: 70/$px2rem 0 15/$px2rem;
+                background: url('../img/start-btn-done.gif') no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+    .time-tip{
+        width: 560/$px2rem;
+        height: 72/$px2rem;
+        line-height: 72/$px2rem;
+        margin: 0 auto;
+        background-color: #AB2000;
+        border-radius: 10/$px2rem;
+        color: #FFEEC6;
+        font-size: 24/$px2rem;
+        text-align: center;
+        span{
+            font-size: 28/$px2rem;
+            font-weight: bold;
+        }
+    }
+    .play-tips{
+        width: 570/$px2rem;
+        height: 1020/$px2rem;
+        margin: 64/$px2rem auto 0;
+        background: url('../img/play-tips.png') no-repeat;
+        background-size: contain;
+    }
+    .rules-btn{
+        position: fixed;
+        bottom: 75vh;
+        right: 0;
+        width: 37/$px2rem;
+        height: 130/$px2rem;
+        background: url('../img/rules-btn.png') no-repeat;
+        background-size: contain;
+    }
+    .loop-wrap{
+        position: absolute;
+        top: 50vw;
+        left: -20/$px2rem;
+        width: 360/$px2rem;
+        height: 52/$px2rem;
+        padding-left: 20/$px2rem;
+        background: rgba(0,0,0,0.4);
+        border-radius: 50px;
+        overflow: hidden;
+        .content{
+            position: relative;
+            animation-fill-mode: both;
+            animation-duration: 30s;
+            animation-iteration-count: infinite;
+            li{
+                line-height: 52/$px2rem;
+                font-size: 20/$px2rem;
+                color: #fff;
+                text-align: center;
+                em{
+                  display: inline-block;
+                  font-size: 20/$px2rem;
+                  font-style: normal;
+                  width: 100/$px2rem;
+                  vertical-align: bottom;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                }
+                span{
+                    font-size: 20/$px2rem;
+                    color: #FFE958;
+                }
+                &.patch{
+                  width: 100%;
+                  position: absolute;
+                  left: 0;
+                  bottom: -52/$px2rem;
+                }
+            }
+        }
+    }
+    .mask{
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.3);
+        padding-top: 150/$px2rem;
+        .cancle-mask{
+          position: absolute;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+    }
+    .rules-dialog{
+        position: relative;
+        z-index: 3;
+        width: 520/$px2rem;
+        margin: 0 auto;
+        padding: 90/$px2rem 25/$px2rem 35/$px2rem;
+        border-radius: 18/$px2rem;
+        background: url('../img/rule-dialog-title.png') no-repeat;
+        background-size: 252/$px2rem 32/$px2rem;
+        background-position: center 34/$px2rem;
+        background-color: #fff;
+        .content{
+            position: relative;
+            // height: 480/$px2rem;
+            height: 50vh;
+            padding: 10/$px2rem 20/$px2rem 80/$px2rem;
+            background-color: #fff9f6;
+            overflow-y: scroll;
+            p{
+                font-size: 24/$px2rem;
+                line-height: 34/$px2rem;
+                text-align: justify;
+                margin-bottom: 10/$px2rem;
+                span{
+                    font-size: 24/$px2rem;
+                    color: #d3300a;
+                }
+            }
+        }
+        .footer{
+            position: absolute;
+            left: 25/$px2rem;
+            bottom: 20/$px2rem;
+            z-index: 1;
+            width: 470/$px2rem;
+            height: 80/$px2rem;
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, #fff9f6 50%);
+            background-image: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, #fff9f6 50%);
+            span{
+                display: block;
+                width: 190/$px2rem;
+                height: 36/$px2rem;
+                margin: 35/$px2rem auto 0;
+                background: url('../img/rule-dialog-down.png') no-repeat;
+                background-size: contain;
+            }
+        }
+        .cancle-btn{
+            position: absolute;
+            left: 50%;
+            bottom: -90/$px2rem;
+            width: 74/$px2rem;
+            height: 74/$px2rem;
+            margin-left: -37/$px2rem;
+            background: url('../img/cancle-btn.png') no-repeat;
+            background-size: contain;
+        }
+    }
+    .c-modal{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      padding-top: 75vh;
+      .dialog{
+          margin-top: 50%;
+          line-height: 40/$px2rem;
+          padding: 20/$px2rem;
+          background-color: rgba(0,0,0,0.6);
+          border-radius: 4px;
+          text-align: center;
+          font-size: 28/$px2rem;
+          color: #fff;
+      }
+  }
+}

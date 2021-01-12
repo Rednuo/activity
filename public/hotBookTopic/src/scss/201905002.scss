@@ -1,0 +1,195 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+.J_pageWraper {
+    font-size: 0;
+
+    img {
+        width: 100%;
+        border: none;
+    }
+
+    .book1 {
+        position: relative;
+        overflow: hidden;
+
+        .countdown {
+            position: absolute;
+            top: 0;
+            left: 45%;
+            padding-top: 4.8%;
+
+            span {
+                display: inline-block;
+                font-size: 28/$px2rem;
+                height: 36/$px2rem;
+                line-height: 36/$px2rem;
+                color: #fff;
+                text-align: center;
+                margin-right: 5/$px2rem;
+
+                &.time {
+                    width: 24/$px2rem;
+                    background: #C22F3E;
+                    line-height: 36/$px2rem;
+                }
+            }
+        }
+
+        .desc {
+            background: url('../image/201905002/03.png');
+            background-size: 100%;
+            padding: 0 90/$px2rem;
+
+            .text {
+                text-align: justify;
+                font-size: 24/$px2rem;
+                color: #444444;
+                line-height: 34/$px2rem;
+                word-break: break-all;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                /*! autoprefixer: off */
+                -webkit-box-orient: vertical;
+                /* autoprefixer: on */
+                -webkit-transition: all 0.4s ease;
+            }
+
+            .active {
+                height: auto !important;
+                overflow: auto !important;
+                display: block !important;
+            }
+        }
+
+        .desc_bot {
+            background: url('../image/201905002/03.png');
+            background-size: 100%;
+            text-align: justify;
+            font-size: 22/$px2rem;
+            color: #B2B2B2;
+            height: 46/$px2rem;
+            line-height: 46/$px2rem;
+            text-align: center;
+
+            i {
+                display: inline-block;
+                vertical-align: middle;
+                width: 26/$px2rem;
+                height: 26/$px2rem;
+                margin-left: 5/$px2rem;
+                background: url("../image/201905002/arrow_up.png") no-repeat;
+                background-size: 100% 100%;
+
+                &.down {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .bot {
+            position: relative;
+
+            div {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 150/$px2rem;
+                background: transparent;
+            }
+        }
+    }
+
+    .book2 {
+        position: relative;
+
+        .book2_1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 55%;
+        }
+
+        .book2_2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 45%;
+        }
+    }
+
+    .book3 {
+        width: 100%;
+        position: relative;
+
+        .books {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 0;
+            text-align: center;
+            padding: 17% 8% 0;
+
+            .book {
+                display: inline-block;
+                vertical-align: top;
+                width: 25%;
+                margin-bottom: 0/$px2rem;
+                overflow: hidden;
+                text-align: left;
+
+                &:nth-of-type(3n+2) {
+                    margin: 0 8% 0/$px2rem;
+                }
+
+                .cover {
+                    position: relative;
+                    width: 100%;
+                    padding-top: 137%;
+                    margin: 0 auto 20/$px2rem;
+                    background-size: 100% 100%;
+                    border-radius: 8/$px2rem;
+                    overflow: hidden;
+                    box-shadow:0 6/$px2rem 10/$px2rem 0 rgba(103,117,246,0.25);
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .name {
+                    width: 100%;
+                    height: 30/$px2rem;
+                    line-height: 30/$px2rem;
+                    margin: 0 auto 12/$px2rem;
+                    font-size: 26/$px2rem;
+                    color: #fff;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                .author {
+                    width: 100%;
+                    height: 30/$px2rem;
+                    line-height: 30/$px2rem;
+                    margin: 0 auto 20/$px2rem;
+                    font-size: 22/$px2rem;
+                    color: #fff;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}

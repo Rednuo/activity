@@ -1,0 +1,493 @@
+@import '../../../../Common/css/base.scss';
+$px2vw: 7.5 / 1vw;
+
+html,
+body {
+  width: 750/$px2vw;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #000;
+}
+
+[v-cloak] {
+  display: none;
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+}
+@keyframes rotate{
+  0%{
+      transform: rotate(0);
+    }
+  50%{
+    transform:rotate(200deg);
+  }
+  100%{
+       transform: rotate(360deg);
+    }
+  }
+@keyframes shake{
+  0%{
+      transform: rotate(15deg);
+    }
+  25%{
+    transform:rotate(30deg);
+  }
+  50%{
+    transform:rotate(0deg);
+  }
+  75%{
+    transform:rotate(-15deg);
+  }
+  100%{
+       transform: rotate(-30deg);
+    }
+  }
+.page-index-wraper {
+  position: relative;
+  width: 750/$px2vw;
+  background-image: url(../img/20201001-yuanqi/bg.png);
+  background-size: 100% 1516/$px2vw;
+  background-repeat: no-repeat;
+  background-position: center top;
+  padding-bottom: 66/$px2vw;
+  overflow-x: hidden;
+  .title-img {
+    display: block;
+    margin: 0 auto;
+    width: 622/$px2vw;
+  }
+  .tip-status {
+    display: block;
+    font-size: 32/$px2vw;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    color: #F090FF;
+    line-height: 44/$px2vw;
+    text-shadow: 0/$px2vw 8/$px2vw 32/$px2vw rgba(0, 0, 0, 0.5);
+    margin-top: 8/$px2vw;
+    text-align: center;
+  }
+  .content {
+    width: 100%;
+    position: relative;
+    z-index: 8;
+    .content-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      background: url(../img/20201001-yuanqi/light.png) no-repeat center;
+      background-size: 700/$px2vw 687/$px2vw;
+      opacity: .36;
+      transition: 0.5s;
+      transform-origin: 50% 50% 0;
+      animation: rotate 10s linear infinite;
+    }
+    .progress-wrapper {
+      width: 348/$px2vw;
+      height: 62/$px2vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url(../img/20201001-yuanqi/bg_progress_wrapper.png);
+      background-size: 100% 100%;
+      background-position: center bottom;
+      background-color: #fff;
+      border-radius: 20/$px2vw;
+      margin: 22/$px2vw auto 0;
+      .progress-inner {
+        position: relative;
+        width: 318/$px2vw;
+        height: 36/$px2vw;
+        background-image: url(../img/20201001-yuanqi/bg_progress.png);
+        background-size: 100% 100%;
+        border-radius: 12/$px2vw;
+        overflow: hidden;
+        .progress {
+          display: block;
+          height: 100%;
+          background-image: url(../img/20201001-yuanqi/progress.png);
+          background-size: 318/$px2vw 100%;
+          background-repeat: no-repeat;
+          background-position: left center;
+          border-radius: 12/$px2vw;
+        }
+        .progress-text {
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          font-size: 20/$px2vw;
+          font-weight: 800;
+          color: rgba(169, 132, 2, 0.77);
+          line-height: 36/$px2vw;
+          text-shadow: 0/$px2vw 8/$px2vw 32/$px2vw rgba(0, 0, 0, 0.5);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: rgba(169, 132, 2, 0.77);
+          text-align: center;
+        }
+      }
+    }
+    .bottle {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      height: 752/$px2vw;
+      background-image: url(../img/20201001-yuanqi/bottle_empty.png);
+      background-size: 840/$px2vw 840/$px2vw;
+      background-position: center center;
+      background-repeat: no-repeat;
+      margin: -62/$px2vw auto 0;
+      transform-origin: 375/$px2vw 376/$px2vw;
+      &.shake {
+        animation: shaking 2s linear infinite ;
+      }
+    }
+  }
+  .btn {
+    position: relative;
+    z-index: 15;
+    width: 526/$px2vw;
+    height: 124/$px2vw;
+    background-image: url(../img/20201001-yuanqi/bg_btn.png);
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: -40/$px2vw auto 0;
+    padding-bottom: 12/$px2vw;
+    span {
+      &:nth-of-type(1) {
+        font-size: 40/$px2vw;
+        font-weight: 900;
+        color: #FFEAF8;
+        line-height: 1;
+      }
+      &:nth-of-type(2) {
+        font-size: 28/$px2vw;
+        font-weight: 800;
+        color: #FFA2CF;
+        line-height: 1;
+        margin-top: 8/$px2vw;
+      }
+    }
+  }
+  .tips {
+    margin-top: 40/$px2vw;
+    span {
+      display: block;
+      font-size: 24/$px2vw;
+      font-weight: normal;
+      color: #F7D3DD;
+      line-height: 34/$px2vw;
+      text-align: center;
+    }
+  }
+  .title-icon {
+    display: block;
+    height: 54/$px2vw;
+    margin: 64/$px2vw auto 0;
+  }
+  .gift-wrapper {
+    margin-top: 34/$px2vw;
+    padding: 0 76/$px2vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    >div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        width: 178/$px2vw;
+        height: 178/$px2vw;
+      }
+      span {
+        font-size: 26px;
+        font-weight: 900;
+        color: #F7D3DD;
+        line-height: 60px;
+      }
+    }
+  }
+  .rule-wrapper {
+    margin: 42/$px2vw 76/$px2vw;
+    p {
+      font-size: 24/$px2vw;
+      color: rgba(247, 211, 221, 0.71);
+      line-height: 34/$px2vw;
+      span {
+        font-size: 24/$px2vw;
+        color: #FFC900;
+        line-height: 34/$px2vw;
+      }
+    }
+  }
+
+}
+
+.modal_mask {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .modal_content {
+    z-index: 0;
+    position: relative;
+    width: 572/$px2vw;
+    text-align: center;
+    background-size: 100% 100%;
+    .close{
+      position: absolute;
+      top:100/$px2vw;
+      right:0;
+      display: inline-block;
+      width: 100/$px2vw;
+      height: 100/$px2vw;
+    }
+    .title{
+      font-size: 44/$px2vw;
+      color: #fff;
+      line-height: 100/$px2vw;
+      margin-top: 5/$px2vw;
+    }
+    .btn_wrapper {
+      position: absolute;
+      bottom:52/$px2vw;
+      left:93/$px2vw;
+      width: 386/$px2vw;
+      height: 68/$px2vw;
+      line-height: 68/$px2vw;
+      margin: 0 auto;
+      background-color: #FB5061;
+      border-radius: 41/$px2vw;
+      font-size: 28/$px2vw;
+      color: #fff;
+      text-align: center;
+    }
+
+    &.ouqi {
+      height: 580/$px2vw;
+      background-image: url(../img/20201001-yuanqi/modal_3.png);
+      background-size: 572/$px2vw;
+      .title{
+        margin-top: 130/$px2vw;
+      }
+      .item{
+        padding: 60/$px2vw 0;
+        .content{
+          padding-bottom: 10/$px2vw;
+          .icon{
+            display: inline-block;
+            width: 72/$px2vw;
+            height: 72/$px2vw;
+            background: url(../img/20201001-yuanqi/icon-bottle.png);
+            background-size: 72/$px2vw;
+            vertical-align: middle;
+          }
+          .ouqi_num {
+            display: inline-block;
+            line-height: 72/$px2vw;
+            font-size: 44/$px2vw;
+            font-weight: 900;
+            color: #FF6E7B;
+            vertical-align: middle;
+            margin-right: 10/$px2vw;
+          }
+          .txt{
+            display: inline-block;
+            font-size: 44/$px2vw;
+            line-height: 72/$px2vw;
+            color: rgba(100, 100, 100, 1);
+            vertical-align: middle;
+            font-weight: 600;
+          }
+        }
+        .tip{
+          font-size: 30/$px2vw;
+          color: rgba(100, 100, 100, 0.36);
+        }
+      }
+
+    }
+    &.exchange {
+      width: 572/$px2vw;
+      height: 588/$px2vw;
+      background-image: url(../img/20201001-yuanqi/modal_1.png);
+      text-align: center;
+      .title{
+        font-size: 44/$px2vw;
+        color: #fff;
+        line-height: 100/$px2vw;
+        margin-top: 63/$px2vw;
+      }
+      .close{
+        position: absolute;
+        top:100/$px2vw;
+        right:0;
+        display: inline-block;
+        width: 100/$px2vw;
+        height: 100/$px2vw;
+      }
+      .item{
+        padding: 40/$px2vw 0 30/$px2vw;
+        .content{
+          .item-title{
+            font-size: 30/$px2vw;
+            color: #646464;
+            margin-bottom: 18/$px2vw;
+          }
+          input {
+            display: block;
+            width: 400/$px2vw;
+            height: 90/$px2vw;
+            line-height: 90/$px2vw;
+            margin: 0 auto 14/$px2vw;
+            border-radius: 41/$px2vw;
+            outline: none;
+            border:none;
+            font-size: 48/$px2vw;
+            text-align: center;
+            font-weight: 900;
+            color: #FF6E7B;
+            background-color: #F0F0F0;
+          }
+          .sugar_num{
+            font-size: 24/$px2vw;
+            color: #DF9C19;
+            margin-bottom: 4/$px2vw;
+          }
+        }
+        .tip{
+          font-size: 20/$px2vw;
+          color: rgba(100, 100, 100, 0.46);
+        }
+      }
+
+    }
+
+    &.dzz,&.bz,&.yqt {
+      width: 572/$px2vw;
+      height: 862/$px2vw;
+      background-image: url(../img/20201001-yuanqi/modal_2.png);
+      .title{
+        margin-top: 130/$px2vw;
+      }
+      .item{
+        .content{
+          padding-bottom: 10/$px2vw;
+          img{
+            width: 356/$px2vw;
+            height: 356/$px2vw;
+          }
+          p{
+            font-size: 52/$px2vw;
+            color: rgba(255, 110, 123, 1);
+            font-weight: 600;
+            span{
+              font-size: 44/$px2vw;
+              color: rgba(100, 100, 100, 1);
+            }
+          }
+        }
+        .tip{
+          font-size: 24/$px2vw;
+          color: rgba(100, 100, 100, 0.64);
+        }
+      }
+    }
+  }
+}
+
+.z_index_1 {
+  z-index: 1;
+}
+
+.z_index_2 {
+  z-index: 2;
+}
+
+.z_index_3 {
+  z-index: 3;
+}
+
+.z_index_4 {
+  z-index: 4;
+}
+
+.z_index_5 {
+  z-index: 5;
+}
+
+.z_index_6 {
+  z-index: 6;
+}
+
+@keyframes shaking {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-15deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(12deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-9deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(6deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    background-image: url(../img/20201001-yuanqi/bottle_full.png);
+  }
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}

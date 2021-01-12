@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+
+<head>
+  <meta charset="UTF-8">
+  <title>元气满满抽手机</title>
+  <!-- rem -->
+  <script>
+    ! function (e) {
+      function t(a) {
+        if (i[a]) return i[a].exports;
+        var n = i[a] = {
+          exports: {},
+          id: a,
+          loaded: !1
+        };
+        return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports
+      }
+      var i = {};
+      return t.m = e, t.c = i, t.p = "", t(0)
+    }([function (e, t) {
+      "use strict";
+      Object.defineProperty(t, "__esModule", {
+        value: !0
+      });
+      var i = window;
+      t["default"] = i.flex = function (normal, e, t) {
+        var a = e || 100,
+          n = t || 1,
+          r = i.document,
+          o = navigator.userAgent,
+          d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),
+          l = o.match(/U3\/((\d+|\.){5,})/i),
+          c = l && parseInt(l[1].split(".").join(""), 10) >= 80,
+          p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi),
+          s = i.devicePixelRatio || 1;
+        p || d && d[1] > 534 || c || (s = 1);
+        var u = normal ? 1 : 1 / s,
+          m = r.querySelector('meta[name="viewport"]');
+        m || (m = r.createElement("meta"), m.setAttribute("name", "viewport"), r.head.appendChild(m)), m
+          .setAttribute("content", "width=device-width,user-scalable=no,initial-scale=" + u + ",maximum-scale=" +
+            u + ",minimum-scale=" + u), r.documentElement.style.fontSize = normal ? "50px" : a / 2 * s * n + "px"
+      }, e.exports = t["default"]
+    }]);
+    flex(false, 100, 1);
+  </script>
+  <script>
+    if (location.protocol == 'https:') {
+      document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+    }
+  </script>
+  <!-- <script type="text/javascript" src="https://statics.zhuishushenqi.com/vconsole.min.js"></script>
+  <script>
+    // 初始化vConsole
+    window.vConsole = new window.VConsole({
+      defaultPlugins: ['system', 'network', 'element', 'storage'], // 可以在此设定要默认加载的面板
+      maxLogNumber: 1000,
+      // disableLogScrolling: true,
+      onReady: function () {
+        console.log('vConsole is ready.');
+        console.log(navigator.userAgent);
+      },
+      onClearLog: function () {
+        console.log('on clearLog');
+      }
+    });
+  </script> -->
+</head>
+
+<body>
+  <div class="page-index-wraper" id="J_pageWraper" v-cloak>
+    <div class="baberrage_wrapper">
+      <vue-baberrage ref="babarrage" :lanes-count="15" :is-show="true"
+        :barrage-list="barrageList" :loop="false" :max-word-count="60" :hover-lane-pause="false">
+        <template v-slot:default="slotProps">
+          <span
+          style="font-size:5vw;border-radius: 5vw;padding:0 4vw;height:9vw !important;line-height:9vw !important;color: #fff;background-color: rgba(151,70,206,.65);font-weight: 900;
+          -webkit-text-stroke: 2px #9746ce;">
+            {{slotProps.item.msg}}
+          </span>
+        </template>
+      </vue-baberrage>
+    </div>
+    <span class="icon_account">{{(accountInfo.usingpresentad || '0') | gold}}</span>
+    <img class="icon_rewards" src="../img/20200813/icon_rewards.png" @click="showMyGift()">
+    <img class="bg_1 z_index_1" src="../img/20200813/bg_1.png">
+    <!-- <transition name="fade"> -->
+      <img class="icon_machine z_index_2" src="../img/20200813/icon_machine.png" v-show="!isDrawing">
+    <!-- </transition> -->
+    <!-- <transition name="fade"> -->
+      <img class="icon_machine_gif z_index_2" id="draw" src="" v-show="isDrawing">
+    <!-- </transition> -->
+    <img class="bg_2 z_index_3" src="../img/20200813/bg_2.png">
+    <img class="btn_1 z_index_4" src="../img/20200813/btn_1.png" @click="draw()">
+
+    <div class="swiper-container" id="swiper1">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" v-for="item in swiperList">
+          <img :src="item">
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper2_wrapper">
+      <div class="swiper-container" id="swiper2">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="item in allRecord">
+              <span>{{item.UserName}}</span>
+              <span>{{item.PrizeName}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_mask" v-show="showModalRecords">
+      <div class="modal_content records">
+        <img class="close" src="../img/20200813/icon_close.png" @click="showModalRecords = false;">
+        <div class="list">
+          <div class="list_item" v-for="item in myRecord">
+            <span>{{item.name}}</span>
+            <span>............</span>
+            <span>{{item.createtime.replace(/-/g,'.')}}</span>
+          </div>
+        </div>
+        <!-- <div class="btn_wrapper">
+          <img class="btn_continue" src="../img/20200813/btn_continue.png">
+        </div> -->
+      </div>
+    </div>
+
+    <div class="modal_mask" v-show="showModalNoChance">
+      <div class="modal_content nochance">
+        <img class="close" src="../img/20200813/icon_close.png" @click="showModalNoChance = false;">
+        <div class="btn_wrapper">
+          <img class="btn_continue" src="../img/20200813/btn_task.png" @click="openTaskCenter()">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_mask" v-show="showModalBlessing">
+      <img class="light" src="../img/20200813/bg_light.png">
+      <div class="modal_content blessing">
+        <img class="close" src="../img/20200813/icon_close.png" @click="showModalBlessing = false;">
+        <div class="btn_wrapper">
+          <img class="btn_continue" src="../img/20200813/btn_continue.png" @click="showModalBlessing = false;">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal_mask" v-show="showModalSugar">
+      <img class="light" src="../img/20200813/bg_light.png">
+      <div class="modal_content sugar">
+        <img class="close" src="../img/20200813/icon_close.png" @click="showModalSugar = false;">
+        <span class="sugar_num">
+          {{sugarNum}}
+        </span>
+        <div class="btn_wrapper">
+          <img class="btn_continue" src="../img/20200813/btn_continue.png" @click="showModalSugar = false;">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal_mask" v-show="showModalJK">
+      <img class="light" src="../img/20200813/bg_light.png">
+      <div class="modal_content JK">
+        <img class="close" src="../img/20200813/icon_close.png" @click="showModalJK = false;">
+        <div class="btn_wrapper">
+          <img class="btn_confirm" src="../img/20200813/btn_confirm.png" @click="showModalJK = false;">
+          <img class="btn_copy" data-clipboard-text="3379268566" @click="copy" src="../img/20200813/btn_copy.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_mask" v-show="showModalDZZ">
+      <img class="light" src="../img/20200813/bg_light.png">
+      <div class="modal_content DZZ">
+        <img class="close" src="../img/20200813/icon_close.png" @click="showModalDZZ = false;">
+        <div class="btn_wrapper">
+          <img class="btn_confirm" src="../img/20200813/btn_confirm.png" @click="showModalDZZ = false;">
+          <img class="btn_copy" data-clipboard-text="3379268566" @click="copy" src="../img/20200813/btn_copy.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_mask" v-show="showModalYZ">
+      <img class="light" src="../img/20200813/bg_light.png">
+      <div class="modal_content YZ">
+        <img class="close" src="../img/20200813/icon_close.png" @click="showModalYZ = false;">
+        <div class="btn_wrapper">
+          <img class="btn_confirm" src="../img/20200813/btn_confirm.png" @click="showModalYZ = false;">
+          <img class="btn_copy" data-clipboard-text="3379268566" @click="copy" src="../img/20200813/btn_copy.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_mask" v-show="showModalYQFD">
+      <img class="light" src="../img/20200813/bg_light.png">
+      <div class="modal_content YQFD">
+        <img class="close" src="../img/20200813/icon_close.png" @click="showModalYQFD = false;">
+        <div class="btn_wrapper">
+          <img class="btn_confirm" src="../img/20200813/btn_confirm.png" @click="showModalYQFD = false;">
+          <img class="btn_copy" data-clipboard-text="3379268566" @click="copy" src="../img/20200813/btn_copy.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_mask" v-show="showModalYQMXP">
+      <img class="light" src="../img/20200813/bg_light.png">
+      <div class="modal_content YQMXP">
+        <img class="close" src="../img/20200813/icon_close.png" @click="showModalYQMXP = false;">
+        <div class="btn_wrapper">
+          <img class="btn_confirm" src="../img/20200813/btn_confirm.png" @click="showModalYQMXP = false;">
+          <img class="btn_copy" data-clipboard-text="3379268566" @click="copy" src="../img/20200813/btn_copy.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_mask" v-show="showModalMNDFS">
+      <img class="light" src="../img/20200813/bg_light.png">
+      <div class="modal_content MNDFS">
+        <img class="close" src="../img/20200813/icon_close.png" @click="showModalMNDFS = false;">
+        <div class="btn_wrapper">
+          <img class="btn_confirm" src="../img/20200813/btn_confirm.png" @click="showModalMNDFS = false;">
+          <img class="btn_copy" data-clipboard-text="3379268566" @click="copy" src="../img/20200813/btn_copy.png">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

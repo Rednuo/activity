@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>双旦活动</title>
+    <script type="text/javascript">
+        ! function(e, t) { function n() { t.body ? t.body.style.fontSize = 12 * o + "px" : t.addEventListener("DOMContentLoaded", n) } function d() { var e = i.clientWidth / 10; i.style.fontSize = e + "px" } var i = t.documentElement, o = e.devicePixelRatio || 1; if (n(), d(), e.addEventListener("resize", d), e.addEventListener("pageshow", function(e) { e.persisted && d() }), o >= 2) { var a = t.createElement("body"), s = t.createElement("div"); s.style.border = ".5px solid transparent", a.appendChild(s), i.appendChild(a), 1 === s.offsetHeight && i.classList.add("hairlines"), i.removeChild(a) } }(window, document);
+    </script>
+    <script>
+        var getQueryParams = function(name, url) {
+            if (!url) url = location.href;
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(url);
+            return results == null ? null : results[1];
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/giveOut.css" />
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script>
+</head>
+
+<body>
+    <div class="page-giveOut-wraper" id="J_pageIndexWraper" v-cloak>
+        <div class="top-bag" v-if="data.active">
+            <p class="award">
+                <span class="num">{{parseInt(data.caclAverageNum).toLocaleString()}}</span>
+                <span class="bookticket">书<br/>券</span>
+            </p>
+            <p class="hint"><span>已发放</span></p>
+            <div class="checkAward" @click="openAccount()"></div>
+        </div>
+        <div class="notJoin" v-if="!data.active">
+            <a class="jump" @click="openPostDetail()">前往社区</a>
+        </div>
+        <div class="button">
+            <span  @click="openBookListDetail()">签收您的新年书单</span>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/vue-resource.js"></script>
+<script type="text/javascript" src="js/bridge_new.js"></script>
+<script type="text/javascript" src="js/giveOut.js"></script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan style='display:none' id='cnzz_stat_icon_1261312741'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261312741' type='text/javascript'%3E%3C/script%3E"));</script>
+</html> 

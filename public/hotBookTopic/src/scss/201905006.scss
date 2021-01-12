@@ -1,0 +1,143 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+.J_pageWraper {
+    font-size: 0;
+
+    img {
+        display: block;
+        width: 100%;
+        border: none;
+    }
+
+    .book1 {
+        position: relative;
+        font-size: 0;
+
+        .countdown {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            padding-top: 82%;
+
+            .t1 {
+                margin-bottom: 8/$px2rem;
+                font-size: 22/$px2rem;
+                line-height: 32/$px2rem;
+                color: #F3BF2D;
+                text-align: center;
+            }
+
+            .t2 {
+                text-align: center;
+            }
+
+            span {
+                display: inline-block;
+                font-size: 30/$px2rem;
+                height: 36/$px2rem;
+                line-height: 36/$px2rem;
+                color: #835E16;
+                text-align: center;
+                margin-right: 5/$px2rem;
+                font-weight: bolder;
+
+                &.time {
+                    width: 30/$px2rem;
+                    border: 1px #F3BF2D solid;
+                    line-height: 36/$px2rem;
+                    color: #FFF6B7;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .btn {
+            position: absolute;
+            width: 60%;
+            height: 10%;
+            bottom: 0;
+            left: 20%;
+        }
+    }
+    .book2 {
+        position: relative;
+
+        .book2_1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 56%;
+        }
+
+        .book2_2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 44%;
+        }
+    }
+    .bookList {
+        font-size: 0;
+        width: 100%;
+        position: relative;
+
+        .books {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 0;
+            text-align: center;
+            padding: 30% 12% 0;
+
+            .book {
+                display: inline-block;
+                vertical-align: top;
+                width: 25%;
+                margin-bottom: 20/$px2rem;
+                overflow: hidden;
+                text-align: left;
+
+                &:nth-of-type(3n+2) {
+                    margin: 0 6% 0/$px2rem;
+                }
+
+                .cover {
+                    position: relative;
+                    width: 100%;
+                    padding-top: 142%;
+                    margin: 0 auto 20/$px2rem;
+                    background-size: 100% 100%;
+                    border-radius: 6/$px2rem;
+                    overflow: hidden;
+                    background: url('../image/201905006/cover.png') no-repeat;
+                    background-size: 100% 100%;
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 94%;
+                        height: 94%;
+                        border-top-right-radius: 10/$px2rem;
+                        border-bottom-right-radius: 10/$px2rem;
+                    }
+                }
+
+                .name {
+                    width: 100%;
+                    height: 30/$px2rem;
+                    line-height: 30/$px2rem;
+                    margin: 0 auto 12/$px2rem;
+                    font-size: 26/$px2rem;
+                    color: #fff;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}

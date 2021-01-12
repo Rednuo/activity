@@ -1,0 +1,73 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+$px2vw:7.5/1vw;
+body{
+    background-color: rgba(234, 240, 237, .8);
+}
+.J_pageWraper {
+    font-size: 0;
+    img {
+        width: 100%;
+        border: none;
+        margin-bottom: -1px;
+    }
+    .book {
+        position: relative;
+        height: 767/$px2vw;
+        width: 100%;
+        background-image: url(../image/202004029/img_02.png);
+        background-size: 100% 100%;
+        margin-bottom: -1px;
+        span {
+            position: absolute;
+            left: 563/$px2vw;
+            top: 364/$px2vw;
+            width: 136/$px2vw;
+            height: 56/$px2vw;
+        }
+    }
+    .bookList {
+        position: relative;
+        height: 609/$px2vw;
+        width: 100%;
+        background-image: url(../image/202004029/img_06.png);
+        background-size: 100% 100%;
+        margin-bottom: -1px;
+        div {
+            position: absolute;
+            height: 346/$px2vw;
+            width: 204/$px2vw;
+            &:nth-of-type(1) {
+                left: 40/$px2vw;
+                top: 100/$px2vw;
+            }
+            &:nth-of-type(2) {
+                left: 272/$px2vw;
+                top: 100/$px2vw;
+            }
+            &:nth-of-type(3) {  
+                left: 504/$px2vw;
+                top: 100/$px2vw;
+            }
+        }
+    }
+    .btn {
+        position: fixed;
+        width: 100%;
+        box-sizing: border-box;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(255, 244, 223, .8);
+        background-size: 100% 100%;
+        text-align: center;
+        padding: 10/$px2vw 0;
+        img{
+            width: auto;
+            height: 114/$px2vw;
+        }
+    }
+}
+.c-toast span {
+    height: 0.28rem !important;
+}

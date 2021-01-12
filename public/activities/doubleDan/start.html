@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>双旦活动</title>
+    <script type="text/javascript">
+        ! function(e, t) { function n() { t.body ? t.body.style.fontSize = 12 * o + "px" : t.addEventListener("DOMContentLoaded", n) } function d() { var e = i.clientWidth / 10; i.style.fontSize = e + "px" } var i = t.documentElement, o = e.devicePixelRatio || 1; if (n(), d(), e.addEventListener("resize", d), e.addEventListener("pageshow", function(e) { e.persisted && d() }), o >= 2) { var a = t.createElement("body"), s = t.createElement("div"); s.style.border = ".5px solid transparent", a.appendChild(s), i.appendChild(a), 1 === s.offsetHeight && i.classList.add("hairlines"), i.removeChild(a) } }(window, document);
+    </script>
+    <script>
+        var getQueryParams = function(name, url) {
+            if (!url) url = location.href;
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(url);
+            return results == null ? null : results[1];
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/start.css" />
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script>
+</head>
+
+<body>
+    <div class="page-start-wraper" id="J_pageStartWraper" v-cloak>
+        <span class="rules-btn" @click="showRules=true;_czc.push(['_trackEvent', ' 双旦活动', '开始页', '规则点击', 1, 'active']);"></span>
+        <div class="top-bag">
+            <span class="rw-status" :class="{done:todayReadDone}"></span>
+            <p class="top-text">截至当前奖池金额累计</p>
+            <p class="all-voucher">{{parseInt(data.totalVouchers).toLocaleString()}} <span>书券</span> </p>
+            <div class="ac-info">
+                <div class="left">
+                    <span class="title">预计获得</span>
+                    <span class="count">{{parseInt(data.averageNum).toLocaleString()}}<em> 书券</em></span>
+                </div>
+                <span class="split"></span>
+                <div class="right">
+                    <span class="title">当前参与人数</span>
+                    <span class="count">{{parseInt(data.mockNumber).toLocaleString()}}<em> 位</em></span>
+                </div>
+            </div>
+            <div class="read-btn" @click="jumpToBookShelf">去阅读</div>
+        </div>
+        <div class="middle-read-status">
+            <span class="title">每天阅读5个章节，获得当日“阅读星”</span>
+            <div class="days">
+                <div class="reward"> </div>
+                <div class="line">
+                    <p>累计满</p>
+                    <ul :style="{width:(userData.num>0? userData.num-1 : 0)*1.15*100/7+'%'}">
+                        <li v-for="n in 7" class="star" :class="{done:userData.num>=n,todayDone:userData.num==n&&todayReadDone}">
+                            <span>{{n}}天</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="date">奖励将在2019-01-01自动入账</p>
+        </div>
+        <div class="pay-wrap">
+            <img class="left" src="./img/banner-1-1.jpg" @click="_czc.push(['_trackEvent', ' 双旦活动', '开始页', 'banner-充值点击', 1, 'active']);HybridApi.request({
+                action: 'jump',
+                param: {
+                    'jumpType': 'native',
+                    'pageType': 'baseRecharge'
+                }
+            });" alt="">
+            <!-- <img class="left" src="./img/banner-2.jpg" @click="_czc.push(['_trackEvent', ' 双旦活动', '开始页', 'banner-社区点击', 1, 'active']);HybridApi.request({
+                action: 'jump',
+                param: {
+                    'jumpType': 'native',
+                    'pageType': 'post',
+                    'id': '5c2435bfbce1b6c05f53c191'
+                }
+            });" alt=""> -->
+            <img class="right" src="./img/banner-3.jpg" @click="_czc.push(['_trackEvent', ' 双旦活动', '开始页', 'banner-书单点击', 1, 'active']);HybridApi.request({
+                action: 'jump',
+                param: {
+                    'link': 'https://h5.zhuishushenqi.com/v2/bookListDetail.html?id=5c1b57f1830dee000162b2b1',
+                    'jumpType': 'webview',
+                    'title': '新年书单 走心走肾',
+                    'pageType': 'bookListDetail'
+                }
+            });" alt="">
+
+        </div>
+        <div class="books">
+            <div class="title"></div>
+            <div class="books-wrap">
+                    <div class="footer"></div>
+                    <ul class="book-list" >
+                        <li v-for="(item,index) in books"
+                        class="item" data-exposure-pv="1"
+                        :data-exposure-params="'1006##-1|'+item._id+'##'+item.title+'##弹窗-双旦送书券活动##0##-1##-1##'+(index+1)"
+                        @click="jump({'jumpType': 'native','pageType': 'bookDetail','id':item._id,'code':(posCode||-1)+'|'+item._id+'##'+item.title+'##弹窗-双旦送书券活动##-1##-1##-1##'+(index+1)},index+1)"
+                        >
+                            <div class="cover">
+                                <img :src="'https://statics.zhuishushenqi.com'+item.cover+'?imageMogr2/thumbnail/180x242'" alt="">
+                            </div>
+                            <span class="name">{{item.title}}</span>
+                            <p class="author"><i></i><span>{{item.author}}</span></p>
+                            <p class="desc">{{item.shortIntro}}</p>
+                            <span class="read-btn">去阅读</span>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        <div class="mask" v-show="showRules">
+            <div class="rules-dialog">
+                <div class="content">
+                    <p><span>1. </span>活动时间：2018年12月22日 上午10点——2019年1月1日 零点。12月22日至12月24日为活动报名期，登录活动页点击【立即参加】报名活动。12月25日至12月31日为阅读打卡期，每日可累计相对应的活动进度；活动支持中途加入，但中途加入的书友会错过获取最高奖励的机会哦！</p>
+                    <p><span>2. </span>阅读打卡期间，阅读5个章节即可完成当日打卡任务，每天至多打卡一次（有声小说专区不参与本次活动）；</p>
+                    <p><span>3. </span>奖励获取：完成1天的打卡任务，即可在2019年1月1日瓜分奖池获取不菲的书券奖励！瓜分金额=奖池金额/实际参与人数*奖励倍数，奖励书券有效期7天。</p>
+                    <p><span>4. </span>活动期间累计打卡3天可获2倍奖励；累计打卡5天可获2.5倍奖励；累计打卡7天可获3倍奖励。奖励将于2019年1月1日当天自动发放至您的账户；</p>
+                    <p><span>5. </span>活动中如遇到问题，可关注[ 小说]公众号，联系客服获取帮助；</p>
+                    <p><span>6. </span>如遇不可抗力造成活动不能正常进行， 神器有权取消、修改或暂停本活动；</p>
+                    <p><span>7. </span>活动规则以本平台发布的具体规则为准。</p>
+                </div>
+                <div class="footer">
+                    <span></span>
+                </div>
+                <span class="cancle-btn" @mousedown="showRules=false;"></span>
+            </div>
+            <div class="cancle-mask" @mousedown="showRules=false;"></div>
+        </div>
+
+        <div class="c-modal" v-show="modalMsg"><span class="dialog">{{modalMsg}}</span></div>
+    </div>
+</body>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/vue-resource.js"></script>
+<script type="text/javascript" src="js/bridge_new.js"></script>
+<script type="text/javascript" src="js/exposure.js"></script>
+<script type="text/javascript" src="js/start.js"></script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan style='display:none' id='cnzz_stat_icon_1261312741'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261312741' type='text/javascript'%3E%3C/script%3E"));</script>
+</html>

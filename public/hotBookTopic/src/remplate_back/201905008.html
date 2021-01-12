@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>爆款书籍</title>
+    <script>
+    !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);
+    </script>
+    <script>
+        if (location.protocol == 'https:') {
+            document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+    </script>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script>
+</head>
+
+<body>
+    <div class="J_pageWraper" id="J_pageWraper" v-cloak>
+        <img v-if="pageType==='free'" src="../image/201905008/img-1.jpg" data-src="../image/201905008/img-1.jpg" alt="">
+        <img v-else src="../image/201905008/img-1-2.jpg" data-src="../image/201905008/img-1-2.jpg" alt="">
+        <img src="../image/201905008/img-2.jpg" data-src="../image/201905008/img-2.jpg" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':'5536bd380e9ce8a4443c5ba6','code':'B1##-1|5536bd380e9ce8a4443c5ba6##相门腹黑女##-1##-1##201905008$__$爆款书籍##-1##-1##-1'}})" alt="">
+        <div class="img3">
+            <span class="jion">已有 <span class="red">{{joinCount}}</span> 人开通VIP</span>
+            <span v-if="isMonthly" class="btn read" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':'5536bd380e9ce8a4443c5ba6','code':'B1##-1|5536bd380e9ce8a4443c5ba6##相门腹黑女##-1##-1##201905008$__$爆款书籍##-1##-1##-1'}})"></span>
+            <span v-else-if="pageType==='free'" class="btn free" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'monthlyPay'}})"></span>
+            <span v-else class="btn" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'monthlyPay'}})"></span>
+        </div>
+        <img src="../image/201905008/img-4.jpg" data-src="../image/201905008/img-4.jpg" alt="">
+        <div class="img5">
+            <div class="books">
+                <div class="book" v-for="(book,book_index) in bookList" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':book._id,'code':'B1##-1|'+book._id+'##'+book.title+'##-1##-1##201905008$__$爆款书籍##-1##-1##-1'}})">
+                    <div class="cover">
+                        <img :src="book.cover+'?imageMogr2/thumbnail/288x408'" alt="">
+                    </div>
+                    <p class="name">{{book.title}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- <div @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':'5752f75aa6d59cd12fb9ee84','code':'B1##-1|5752f75aa6d59cd12fb9ee84##阴人勿扰##-1##-1##201905005$__$爆款书籍##-1##-1##-1'}})">
+            <img src="../image/201905005/03.png" data-src="../image/201905005/03.png" alt="">
+        </div>
+        
+        <div class="bookList">
+            <img src="../image/201905005/06.png" data-src="../image/201905005/06.png" alt="">
+            <div class="books">
+                <div class="book" v-for="(book,book_index) in bookList" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':book._id,'code':'B1##-1|'+book._id+'##'+book.title+'##-1##-1##201905005$__$爆款书籍##-1##-1##-1'}})">
+                    <div class="cover">
+                        <img :src="book.cover+'?imageMogr2/thumbnail/288x408'" alt="">
+                    </div>
+                    <p class="name">{{book.title}}</p>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div style="display:none;">
+        <script type="text/javascript" src="https://s4.cnzz.com/z_stat.php?id=1261312741&web_id=1261312741"></script>
+    </div>
+</body>
+
+
+</html>

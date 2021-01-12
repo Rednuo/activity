@@ -1,0 +1,94 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+$px2vw: 7.5 / 1vw ;
+.J_pageWraper{
+    font-size: 0;
+    background-color: #ff8c83;
+    img{
+        width: 100%;
+    }
+    .img3{
+        box-sizing: border-box;
+        padding-top: 30/$px2vw; 
+        width: 750/$px2vw;
+        height: 606/$px2vw;
+        background: url('../image/201905008/img-3.jpg') no-repeat 0 0 / contain;
+        .jion{
+            display: block;
+            width: 448/$px2vw;
+            height: 50/$px2vw;
+            line-height: 50/$px2vw;
+            margin: 0 auto;
+
+            background: url('../image/201905008/join-bg.png') no-repeat 0 0 / contain;
+            text-align: center;
+            font-size: 4.5vw;
+            color: #97100d;
+            .red{
+                font-size: inherit;
+                color: #e50100;
+            }
+        }
+        .btn{
+            display: block;
+            width: 636/$px2vw;
+            height: 112/$px2vw;
+            line-height: 112/$px2vw;
+            background: url('../image/201905008/btn-main.png') no-repeat 0 0 / contain;
+            margin: 10/$px2vw auto;
+            font-size: 38/$px2vw;
+            color: #fff;
+            text-align: center;
+            &.free{
+                background: url('../image/201905008/btn-free.png') no-repeat 0 0 / contain;
+            }
+            &.read{
+                background: url('../image/201905008/btn-read.png') no-repeat 0 0 / contain;
+            }
+        }
+        
+    }
+    .img5{
+        padding: 450/$px2vw 50/$px2vw 50/$px2vw;
+        background: url('../image/201905008/img-5.jpg') no-repeat 0 0 / 100% auto;
+        .books{
+            font-size: 0;
+            .book{
+                display: inline-block;
+                width: 33.3%;
+                vertical-align: top;
+                margin-bottom: 20/$px2vw;
+                .cover{
+                    width: 170/$px2vw;
+                    height: 238/$px2vw;
+                    margin: 0 auto;
+                    background-color: #fff;
+                    box-shadow: 0 0 10px 2px #d94942;
+                    border-radius: 8/$px2vw;
+                    overflow: hidden;
+                    img{
+                        height: 100%;
+                    }
+                }
+                .name{
+                    width: 90%;
+                    height: 70/$px2vw;
+                    margin: 10/$px2vw auto 0;
+                    font-weight: bold;
+                    line-height: 35/$px2vw;
+                    font-size: 26/$px2vw;
+                    color: #a60314;
+                    text-align: center;
+                    word-break: break-all;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    
+                    text-shadow: 0 0 2px #ccc;
+                }
+            }
+        }
+    }
+}

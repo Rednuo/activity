@@ -1,0 +1,175 @@
+<!-- 快应用FAQ -->
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+    <title>帮助与反馈</title>
+    <!-- 神策数据 -->
+    <script>
+      (function(para) {
+        var p = para.sdk_url, n = para.name, w = window, d = document, s = 'script',x = null,y = null;
+        if(typeof(w['sensorsDataAnalytic201505']) !== 'undefined') {
+            return false;
+        }
+        w['sensorsDataAnalytic201505'] = n;
+        w[n] = w[n] || function(a) {return function() {(w[n]._q = w[n]._q || []).push([a, arguments]);}};
+        var ifs = ['track','quick','register','registerPage','registerOnce','trackSignup', 'trackAbtest', 'setProfile','setOnceProfile','appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 'identify','login','logout','trackLink','clearAllRegister','getAppStatus'];
+        for (var i = 0; i < ifs.length; i++) {
+          w[n][ifs[i]] = w[n].call(null, ifs[i]);
+        }
+        if (!w[n]._t) {
+          x = d.createElement(s), y = d.getElementsByTagName(s)[0];
+          x.async = 1;
+          x.src = p;
+          x.setAttribute('charset','UTF-8');
+          w[n].para = para;
+          y.parentNode.insertBefore(x, y);
+        }
+      })({
+        sdk_url: 'https://statics.zhuishushenqi.com/sensorsdata.min.js',
+        heatmap_url: 'https://statics.zhuishushenqi.com/heatmap.min.js',
+        name: 'sensors',
+        // server_url: 'https://endpoint.zhuishushenqi.com/sa?token=schemaLimited-XFBgC8Pb',
+        server_url: 'https://endpoint.zhuishushenqi.com/sa?project=production',
+        cross_subdomain:false,
+        heatmap: {
+            //开启页面点击事件($WebClick)
+            clickmap:'default',
+            //开启视区停留事件($WebStay) 
+            scroll_notice_map:'default'
+        }
+      });
+      sensors.quick('autoTrack');
+        // 注册公共属性
+        sensors.registerPage({
+            platform: '14',
+            product_line: '1'
+        });
+    </script>
+    <script type="text/javascript">
+        !function (a, b) { function c() { var b = f.getBoundingClientRect().width; b / i > 540 && (b = 540 * i); var c = b / 10; f.style.fontSize = c + "px", k.rem = a.rem = c } var d, e = a.document, f = e.documentElement, g = e.querySelector('meta[name="viewport"]'), h = e.querySelector('meta[name="flexible"]'), i = 0, j = 0, k = b.flexible || (b.flexible = {}); if (g) { console.warn("将根据已有的meta标签来设置缩放比例"); var l = g.getAttribute("content").match(/initial\-scale=([\d\.]+)/); l && (j = parseFloat(l[1]), i = parseInt(1 / j)) } else if (h) { var m = h.getAttribute("content"); if (m) { var n = m.match(/initial\-dpr=([\d\.]+)/), o = m.match(/maximum\-dpr=([\d\.]+)/); n && (i = parseFloat(n[1]), j = parseFloat((1 / i).toFixed(2))), o && (i = parseFloat(o[1]), j = parseFloat((1 / i).toFixed(2))) } } if (!i && !j) { var p = (a.navigator.appVersion.match(/android/gi), a.navigator.appVersion.match(/iphone/gi)), q = a.devicePixelRatio; i = p ? q >= 3 && (!i || i >= 3) ? 3 : q >= 2 && (!i || i >= 2) ? 2 : 1 : 1, j = 1 / i } if (f.setAttribute("data-dpr", i), !g) if (g = e.createElement("meta"), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + j + ", maximum-scale=" + j + ", minimum-scale=" + j + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g); else { var r = e.createElement("div"); r.appendChild(g), e.write(r.innerHTML) } a.addEventListener("resize", function () { clearTimeout(d), d = setTimeout(c, 300) }, !1), a.addEventListener("pageshow", function (a) { a.persisted && (clearTimeout(d), d = setTimeout(c, 300)) }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function () { e.body.style.fontSize = 12 * i + "px" }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function (a) { var b = parseFloat(a) * this.rem; return "string" == typeof a && a.match(/rem$/) && (b += "px"), b }, k.px2rem = function (a) { var b = parseFloat(a) / this.rem; return "string" == typeof a && a.match(/px$/) && (b += "rem"), b } }(window, window.lib || (window.lib = {}));
+    </script>
+    <script>
+        if(location.protocol == 'https:'){
+            document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+    </script>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+        -webkit-overflow-scrolling: touch;
+        -webkit-text-size-adjust: 100%;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout:none;
+        -webkit-font-smoothing: antialiased;
+        font-family: Microsoft Yahei, "Helvetica Neue", Helvetica, STHeiTi, sans-serif!important;
+    }
+    body{
+        background-color: #eee;
+    }
+    [v-cloak] {
+        display: none;
+        -webkit-transition:all 0.1s linear;
+    }
+    .page-index .temp{
+        margin: 1.2rem 4% 0;
+        width: 92%;
+    }
+    .page-index h2{
+        line-height: 0.42rem;
+        font-weight: normal;
+        font-size: 0.32rem;
+        color: #999;
+        padding: 0.48rem 0.42rem;
+    }
+    .page-index .sec-list li{
+        position: relative;
+        margin-bottom: 1px;
+        padding: 0.48rem 0.56rem 0.48rem 0.42rem;
+        line-height: 0.48rem;
+        font-size: 0.38rem;
+        font-weight: bold;
+        color: #333;
+        background-color: #fff;
+    }
+    .page-index .sec-list li span{
+        float: right;
+        margin-right: 0.32rem;
+        font-size: 0.26rem;
+        color: #999;
+        font-weight: normal;
+    }
+    .page-index .sec-list li i{
+        position: absolute;
+        top: 0.54rem;
+        right: 0.32rem;
+        width: 0.21rem;
+        height: 0.38rem;
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAbCAYAAAB1NA+iAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+nhxg7wAAAYFJREFUOI2V1LFL1VEYxvHPVcnFv8AhHNzcm4IGEUpI0IamImoRhcBIQsUlRAQVG0TQgghCIiIclYZoMAc3He6mo5vaoIgg1+Hc3+Dx3Ht+nfF53+d73vNy3rdSrVbv4hN68APvcKHkacEc+tCJ1/iJO/8D6Iy0R/iGtrKA9YQ+iK9oLQNYw4dE7KnQm0oOAG/qoPi8wEozSAGoYRhfEjnDWMwBCsgrfE/kjWEmB4ArPMNGIncK0zkAXAoN3EzE3gv9agooIE/wOxFbwEgOAOd4jL+RXsEynucAcIZ+7CYga+jNAeAfHmIv0tvxuQyAMFy1hN5RZmC68AvdidhSroIebDcwL2CmGeAe/rg97jVMYhy1Rk/oFX5jR6RfYRSrhZACDAk7oj3SL4VvfmNW4ie8rCfE5jMMxOYY8FZYIPEWOhF25laiWi3Cr5rFvNuL4wgPsJMyE3owiYlE7KB+80Ejc1HBWELfx/2cuQCcRtqOUPZRzlwARnCIY3wUyj4pY4ZrMK1KJO7k/tIAAAAASUVORK5CYII=') no-repeat;
+        background-size: contain;
+    }
+    .page-index .kf{
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        height: 1.46rem;
+        line-height: 1.46rem;
+        background-color: #fff;
+        margin-top: 0.8rem;
+        /* border-radius: 100px; */
+        /* border: 2px solid #6B6B6B; */
+        text-align: center;
+        font-size: 0.42rem;
+        /* font-weight: bold; */
+        color: #6B6B6B;
+    }
+    .page-index .kf i{
+        display: inline-block;
+        width: 0.75rem;
+        height: 0.64rem;
+        margin-right: 0.32rem;
+        background: url('./icon-kf.png') no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+    }
+</style>
+
+<body>
+    <div class="page-index" id="root" v-cloak>
+        <img v-if="isFetching" class="temp" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAncAAAIXAgMAAACDUJCrAAAADFBMVEUAAAD39/f39/f39/eylH6jAAAAA3RSTlMAeB7nnwpDAAABc0lEQVR42uzcsY1CURAEwR/a5R/FBYL0Dv8wBoTRiKoI2l2NtNcpu8mTt5GXIk/eSF6KPHkjeSny5I3kpciTN5KXIk/eSF6KPHkjeSm3CwAAAJ5y3utHnjx58uTJkydPnjx58uTJkydPnjx58uTJkydPnjwAAAAAAAAAAAAA+FSnLP8W9ZTJkzeSlyJP3kheijx5I3kp8uSN5KXk8wAAAMBY/5i8FHnyRvJS5MkbyUuRJ28kL0WevJG8FGM9AABAzynL37mnTJ68kbwUefJG8lLkyRvJS5EnbyQvJZ8HAABAzXnd7/WPPHny5MmTJ0/enTx58uTJkydP3t235QEAAADw184dnAAIBDAQ7L9qtQElH2HhZirYfyAAAAA4uPsiL0WevJG8FHnyRvJS5MkbyUuRJ28kL8XBHQAAAMb6N/JS5MkbyUuRJ28kL0WevJG8FHnyRvJSjPUAAAA915/kyZMnT548efLkyZMn7yFPnjx5B+Tdi91xlz1a5zwAAAAASUVORK5CYII=" alt="">
+        <template v-else>
+            <h2>常见问题</h2>
+            <ul class="sec-list">
+                <li v-for="item in oftenList" @mousedown="jump({ 'jumpType': 'webview', 'title': '帮助与反馈', 'pageType': '', 'link': origin + '/detail.html?helpid=' + item.Id +'&plversion='+plVersion},'首页-常见问题',item.title)">{{item.title}}<i></i></li>
+            </ul>
+            <h2>你在什么地方遇到问题啦</h2>
+            <ul class="sec-list">
+                <li v-for="item in categoryList" @mousedown="jump({ 'jumpType': 'webview', 'title': '帮助与反馈', 'pageType': '', 'link': origin + '/list_kyy.html?cid=' + item.categoryId +'&plversion='+plVersion},'首页-分类问题',item.title)">{{item.title}} <span>{{item.intro}}</span><i></i></li>
+            </ul>
+            <!-- <a v-show="showKf" class="kf" target="_blank" :href="kfUrl"><i></i> 在线客服</a> -->
+            <div class="kf" @mousedown="clickKF"><i></i> 在线客服</div>
+        </template>
+    </div>
+</body> 
+<div style="display: none;">
+    <script src="https://s11.cnzz.com/z_stat.php?id=1260948588&web_id=1261312741" language="JavaScript"></script>
+</div>
+<!-- <script src="https://qiyukf.com/script/6ca3fffadf7303c72026815b5e78b911.js"></script>
+<script>
+    document.getElementById('YSF-BTN-HOLDER').style.display = 'none';
+</script> -->
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/vue-resource.js"></script>
+<script type="text/javascript" src="js/index_kyy.js"></script>
+</html>

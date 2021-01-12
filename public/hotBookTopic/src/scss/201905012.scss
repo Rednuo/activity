@@ -1,0 +1,50 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+$px2vw: 7.5 / 1vw ;
+.J_pageWraper{
+    font-size: 0;
+    img{
+        width: 100%;
+    }
+    .img5{
+        padding: 120/$px2vw 50/$px2vw 0/$px2vw 50/$px2vw;
+        background: url('../image/201905012/05.jpg') no-repeat;
+        background-size: 100% 100%;
+        .books{
+            font-size: 0;
+            .book{
+                display: inline-block;
+                width: 33.3%;
+                vertical-align: top;
+                margin-bottom: 20/$px2vw;
+                .cover{
+                    width: 170/$px2vw;
+                    height: 238/$px2vw;
+                    margin: 0 auto;
+                    background-color: #fff;
+                    border-radius: 8/$px2vw;
+                    overflow: hidden;
+                    img{
+                        height: 100%;
+                    }
+                }
+                .name{
+                    width: 90%;
+                    height: 70/$px2vw;
+                    margin: 10/$px2vw auto 0;
+                    font-weight: bold;
+                    line-height: 35/$px2vw;
+                    font-size: 26/$px2vw;
+                    color: #fff;
+                    text-align: center;
+                    word-break: break-all;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>爆款书籍</title>
+    <script>
+    !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u+",viewport-fit=cover"),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);
+    </script>
+    <script>
+        if (location.protocol == 'https:') {
+            document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+    </script>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script>
+</head>
+
+<body>
+    <div class="J_pageWraper" id="J_pageWraper" v-cloak>
+        <img src="../image/201910008/01.png" alt="">
+        <div class="video-wrap">
+            <video class="video" src="http://statics.zhuishushenqi.com/hotBooks/1008.mp4" preload="none" poster="http://statics.zhuishushenqi.com/hotBooks/1008.mp4?vframe/jpg/offset/20" controls controlslist="nodownload" @click="clickVideo()"></video>
+        </div>
+        <img src="../image/201910008/03.png" alt="" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':'53dc45bb8646edfe611b067f','code':'B1##-1|53dc45bb8646edfe611b067f##超级黄金指##-1##-1##201910008$__$爆款书籍##-1##-1##-1'}})">
+        <img src="../image/201910008/04.png" alt="" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':'53dc45bb8646edfe611b067f','code':'B1##-1|53dc45bb8646edfe611b067f##超级黄金指##-1##-1##201910008$__$爆款书籍##-1##-1##-1'}})">
+        <img src="../image/201910008/05.png" alt="" @click="callNative({action:'jump',params:{'jumpType':'webview','pageType':'hotBookTopic','title':'狂少归来','link':'https://h5.zhuishushenqi.com/public/hotBookTopic/201908010.html?id=5a6afc6e26dfa479c0f4c97d'}})">
+        <img src="../image/201910008/06.png" alt="" @click="callNative({action:'jump',params:{'jumpType':'webview','pageType':'hotBookTopic','title':'我的房客大小姐','link':'https://h5.zhuishushenqi.com/public/hotBookTopic/201909001.html?id=5a6afc6e26dfa479c0f4c97d'}})">
+        <div class="btn_bg" v-if="isLogin"></div>
+        <div class="btn" v-if="isLogin">
+        <!-- <div class="btn"> -->
+            <img v-if="isMonthly" src="../image/201910008/07.png" alt="" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':'53dc45bb8646edfe611b067f','code':'B1##-1|53dc45bb8646edfe611b067f##超级黄金指##-1##-1##201910008$__$爆款书籍##-1##-1##-1'}})">
+            <img v-else src="../image/201910008/08.png" alt="" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'monthlyPay','code':'B1##-1|53dc45bb8646edfe611b067f##超级黄金指##-1##-1##201910008$__$VIP充值##-1##-1##-1'}})">
+        </div>
+    </div>
+    <div style="display:none;">
+        <script type="text/javascript" src="https://s4.cnzz.com/z_stat.php?id=1261312741&web_id=1261312741"></script>
+    </div>
+</body>
+</html>

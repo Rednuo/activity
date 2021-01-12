@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" class="borderbox">
+
+<head>
+  <meta charset="UTF-8">
+  <title>八天长假 多重福利</title>
+  <!-- rem -->
+  <script>
+    ! function (e) {
+      function t(a) {
+        if (i[a]) return i[a].exports;
+        var n = i[a] = {
+          exports: {},
+          id: a,
+          loaded: !1
+        };
+        return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports
+      }
+      var i = {};
+      return t.m = e, t.c = i, t.p = "", t(0)
+    }([function (e, t) {
+      "use strict";
+      Object.defineProperty(t, "__esModule", {
+        value: !0
+      });
+      var i = window;
+      t["default"] = i.flex = function (normal, e, t) {
+        var a = e || 100,
+          n = t || 1,
+          r = i.document,
+          o = navigator.userAgent,
+          d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),
+          l = o.match(/U3\/((\d+|\.){5,})/i),
+          c = l && parseInt(l[1].split(".").join(""), 10) >= 80,
+          p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi),
+          s = i.devicePixelRatio || 1;
+        p || d && d[1] > 534 || c || (s = 1);
+        var u = normal ? 1 : 1 / s,
+          m = r.querySelector('meta[name="viewport"]');
+        m || (m = r.createElement("meta"), m.setAttribute("name", "viewport"), r.head.appendChild(m)), m
+          .setAttribute("content", "width=device-width,user-scalable=no,initial-scale=" + u + ",maximum-scale=" +
+            u + ",minimum-scale=" + u), r.documentElement.style.fontSize = normal ? "50px" : a / 2 * s * n + "px"
+      }, e.exports = t["default"]
+    }]);
+    flex(false, 100, 1);
+  </script>
+  <script>
+    if (location.protocol == 'https:') {
+      document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+    }
+  </script>
+  <script>
+      var _czc = _czc || [];
+      _czc.push(["_setAccount", "1279198006"]);
+  </script>
+  <!-- <script type="text/javascript" src="http://statics.zhuishushenqi.com/vconsole.min.js"></script>
+  <script>
+    // 初始化vConsole
+    window.vConsole = new window.VConsole({
+      defaultPlugins: ['system', 'network', 'element', 'storage'], // 可以在此设定要默认加载的面板
+      maxLogNumber: 1000,
+      // disableLogScrolling: true,
+      onReady: function () {
+        console.log('vConsole is ready.');
+        console.log(navigator.userAgent);
+      },
+      onClearLog: function () {
+        console.log('on clearLog');
+      }
+    });
+  </script> -->
+</head>
+
+<body>
+  <div class="page-index-wraper" id="J_pageWraper" v-cloak>
+    <img class="top" src="../img/20201001-mhd/top.png">
+    <div :class="['content', activeTab]">
+      <div class="tabs">
+        <span :class="[activeTab == 'manhuaquan' ? 'active' : '']" @click="toogle('manhuaquan')">百万漫画券</span>
+        <span :class="[activeTab == 'book' ? 'active' : '']" @click="toogle('book')">爆更</span>
+      </div>
+      <div class="content-inner">
+        <div class="title-manhuaquan" v-if="activeTab == 'manhuaquan'">连续八天打卡，就能瓜分百万漫画券</div>
+        <div class="title-book" v-else>热门爆更漫画假期放送</div>
+        <div class="card-wrapper"  v-if="activeTab == 'manhuaquan'">
+          <div :class="['card', item.signed ? 'signed' : '']" v-for="(item,index) in signList" @click="onClickCard(item)">
+            <span class="date">{{item.date | date}}</span>
+            <img v-if="!item.signed && index == 7" src="../img/20201001-mhd/icon_gift.png">
+            <span v-else>{{item.signed ? '已签到' : new Date(item.date) < new Date(currentDate) ? '补':'签'}}</span>
+          </div>
+        </div>
+        <div class="book-wrapper" v-else>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/245826/2187880_4f0498cda9614f68b7d37d0882997d89.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              9.29-10.4爆更
+            </span>
+            <span class="book-name">元尊</span>
+            <span class="book-read" @click="openComicDetail('2187880')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/249701/3389958_9b20c96aa3544e71bb117cb8738795b2.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.4爆更
+            </span>
+            <span class="book-name">全能高手</span>
+            <span class="book-read" @click="openComicDetail('3389958')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/249393/3366330_f025998df1d34fd1ba03ea0ad62ebb61.png">
+            <span class="tag">
+              <i class="hot"></i>
+              10.3-10.7爆更
+            </span>
+            <span class="book-name">纯情陆少</span>
+            <span class="book-read" @click="openComicDetail('3366330')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/250131/3444662_6e1380b3002d4ee3975ae43d6791aea9.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.3-10.7爆更
+            </span>
+            <span class="book-name">我有九个女徒弟</span>
+            <span class="book-read" @click="openComicDetail('3444662')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/249698/3389927_a91388d7f4e548a98a71b61c1fb0e42b.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.2-10.6爆更
+            </span>
+            <span class="book-name">都市仙王</span>
+            <span class="book-read" @click="openComicDetail('3389927')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/250130/3444661_99e1e44328ba4952a00ec1e6e897cc35.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.4-10.8爆更
+            </span>
+            <span class="book-name">本婿修的是贱道</span>
+            <span class="book-read" @click="openComicDetail('3444661')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/250132/3444664_ddb08c87450a405f9c8456ba6bb34ebf.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.5-10.7爆更
+            </span>
+            <span class="book-name">养兽为妃</span>
+            <span class="book-read" @click="openComicDetail('3444664')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/245658/2183999_8aece9c7f0944830b8c9071350e8d615.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.3-10.6爆更
+            </span>
+            <span class="book-name">少帅你老婆又跑了</span>
+            <span class="book-read" @click="openComicDetail('2183999')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/247741/2284741_a5c1406da9174f69bf6e52f998e01acc.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.8爆更
+            </span>
+            <span class="book-name">我的微信连三界</span>
+            <span class="book-read" @click="openComicDetail('2284741')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/245335/2183998_ebafef8a33274530a8b46afcd71743fb.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.2-10.5爆更
+            </span>
+            <span class="book-name">入骨暖婚</span>
+            <span class="book-read" @click="openComicDetail('2183998')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/205032/2015169_36085be63eec4efea7790af25ba62714.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.3-10.5爆更
+            </span>
+            <span class="book-name">灵剑尊</span>
+            <span class="book-read" @click="openComicDetail('2015169')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/247958/2594501_678b5a27e8234182872d6151422a3ce1.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.4爆更
+            </span>
+            <span class="book-name">法医狂妃</span>
+            <span class="book-read" @click="openComicDetail('2594501')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/249879/3394752_61890855d72a437eae8a934bfb183015.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              9.30-10.4爆更
+            </span>
+            <span class="book-name">天降萌宝小熊猫：萌妃来袭</span>
+            <span class="book-read" @click="openComicDetail('3394752')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/245328/2184000_1ccc52d141a54fe8b87120871a7d7354.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.3-10.6爆更
+            </span>
+            <span class="book-name">一念时光</span>
+            <span class="book-read" @click="openComicDetail('2184000')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/248650/2619211_ef8d78f6d1954912bcd1d3924aae6910.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.4爆更
+            </span>
+            <span class="book-name">娇女毒妃</span>
+            <span class="book-read" @click="openComicDetail('2619211')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/249387/3365761_d61914d1e4064dcb90552a5eccd111e4.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.3爆更
+            </span>
+            <span class="book-name">至尊神级系统</span>
+            <span class="book-read" @click="openComicDetail('3365761')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/248975/2969219_7a3e2adb311447f6b850badaa53606dd.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.6爆更
+            </span>
+            <span class="book-name">狂女重生：纨绔七皇妃</span>
+            <span class="book-read" @click="openComicDetail('2969219')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/244732/2180224_5abf016d63fa409cb0f3ae8f0cac24d4.png">
+            <span class="tag">
+              <i class="hot"></i>
+              10.2-10.4爆更
+            </span>
+            <span class="book-name">豪门萌妻 夫人休想逃</span>
+            <span class="book-read" @click="openComicDetail('2180224')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/245063/2183020_05822b27efb94482946d0529b6de7f15.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.2-10.4爆更
+            </span>
+            <span class="book-name">先婚后宠小娇妻</span>
+            <span class="book-read" @click="openComicDetail('2183020')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/191032/191032_f6adb33cb1254ff691d474dbddeb3daa.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.3爆更
+            </span>
+            <span class="book-name">重生豪门之强势归来</span>
+            <span class="book-read" @click="openComicDetail('191032')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/215238/2066653_db4a42b62cd144d2a5d93c435a742422.png">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.3爆更
+            </span>
+            <span class="book-name">王爷你好坏</span>
+            <span class="book-read" @click="openComicDetail('2066653')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/234495/2164268_db767211af3e4d10bc443f8b67e7bb0f.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.3爆更
+            </span>
+            <span class="book-name">皇后娘娘的五毛特效</span>
+            <span class="book-read" @click="openComicDetail('2164268')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/250133/3444961_7257090762484c6e9d5413e1637fc8a7.png">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.6爆更
+            </span>
+            <span class="book-name">我缭不动</span>
+            <span class="book-read" @click="openComicDetail('3444961')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/249340/3348311_6560b2cecf664793a01b5d38b44e3ad4.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              9.30-10.4爆更
+            </span>
+            <span class="book-name">最强枭雄系统</span>
+            <span class="book-read" @click="openComicDetail('3348311')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/249978/3416851_bf8439440f904dfa9cb9d6e8a34f29f5.png">
+            <span class="tag">
+              <i class="hot"></i>
+              10.3~10.7爆更
+            </span>
+            <span class="book-name">我和总裁相了个亲</span>
+            <span class="book-read" @click="openComicDetail('3416851')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/250043/3432559_c12d59072431494f86e20b45b191c3cc.png">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.5爆更
+            </span>
+            <span class="book-name">乐园的宝藏</span>
+            <span class="book-read" @click="openComicDetail('3432559')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/249870/3393993_5a0ea4c4b37145548d4a003ed3e068fd.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.3爆更
+            </span>
+            <span class="book-name">私宠甜心宝贝</span>
+            <span class="book-read" @click="openComicDetail('3393993')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/250049/3433959_aad2b02ae0a5434a9ab8ff1a3c2b6f7e.png">
+            <span class="tag">
+              <i class="hot"></i>
+              10.6-10.8爆更
+            </span>
+            <span class="book-name">妖道至尊之妖皇归来</span>
+            <span class="book-read" @click="openComicDetail('3433959')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/249790/3392515_c13b2f7d46fc44c88687fe8e7471d265.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.6-10.8爆更
+            </span>
+            <span class="book-name">今天也没变成人</span>
+            <span class="book-read" @click="openComicDetail('3392515')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/250055/3435181_5fd01d37fb7543799e5984203c6bbb82.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.4爆更
+            </span>
+            <span class="book-name">青帝传</span>
+            <span class="book-read" @click="openComicDetail('3435181')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/250104/3441786_8a79e64dabfc415f854affd4ce219e70.png">
+            <span class="tag">
+              <i class="hot"></i>
+              10.2-10.4爆更
+            </span>
+            <span class="book-name">云想之歌：追爱指令</span>
+            <span class="book-read" @click="openComicDetail('3441786')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/250202/3448144_35623567704d47a5a907899ea5170d38.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.3爆更
+            </span>
+            <span class="book-name">生死诀</span>
+            <span class="book-read" @click="openComicDetail('3448144')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/249691/3389920_e18eda23d0cb489a9fe1976bbb80db99.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.3爆更
+            </span>
+            <span class="book-name">穿越王妃要升级</span>
+            <span class="book-read" @click="openComicDetail('3389920')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/249908/3399192_0a09a6e215d64cadafaadfc85f1ffe15.jpg">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.3爆更
+            </span>
+            <span class="book-name">豹系男友的千层套路</span>
+            <span class="book-read" @click="openComicDetail('3399192')">立即阅读</span>
+          </div>
+          <div class="book">
+            <img class="book-cover" src="http://img.manhuadao.cn/bookcenter/coverimages/250056/3435218_e976dc60d2734037a464799124850971.png">
+            <span class="tag">
+              <i class="hot"></i>
+              10.1-10.3爆更
+            </span>
+            <span class="book-name">桑落醉在南风里</span>
+            <span class="book-read" @click="openComicDetail('3435218')">立即阅读</span>
+          </div>
+        </div>
+        <template v-if="activeTab == 'manhuaquan'">
+          <span class="btn disabled" v-if="new Date('2020/10/09 00:00:00') < currentTime">活动已结束</span>
+          <span class="btn" v-else-if="!isSignUp" @click="CreateBaoMing()">我要参与瓜分</span>
+          <span class="btn disabled" v-else-if="new Date('2020/10/08 20:08:00') > currentTime">10月8日20:08开奖</span>
+          <span class="btn disabled" v-else-if="isCreatePrize">奖励已领取</span>
+          <span class="btn" v-else @click="CreatePrize()">瓜分奖励</span>
+        </template>
+      </div>
+    </div>
+    <div class="rule-wrapper">
+      <h1 class="title">活动规则</h1>
+      <ul>
+        <li>本次活动时间：2020年10月1日-10月8日</li>
+        <li>活动期间，8天都在页面完成签到的用户可以平分一百万漫画券，漫画券有效期为14天。用户需要  先消耗100漫画券或者岛蛋获得参与资格，默认优先抵扣漫画券。</li>
+        <li>如果忘记签到，可以用画券或者岛蛋补签。第一次补签只需100漫画券或者岛蛋，第二次是200漫画券或者岛蛋，以此类推。默认优先抵扣漫画 券。</li>
+        <li>补签和签到都在10月8日晚上8点结束</li>
+        <li>开奖时间为10月8日晚上8点8分，最晚领奖时间截止到10月8日晚上23点59分。</li>
+        <li>本活动为 APP专享，本活动最终解释权归 所有</li>
+      </ul>
+    </div>
+    <!-- bg_modal -->
+
+    <div class="modal_mask" v-show="showModal">
+      <div class="modal_content">
+        <span class="title">{{modalType == 'sign' ? '补签' : modalType == 'tip' ? '奖励' : '恭喜'}}</span>
+        <div class="tips" v-show="modalType == 'sign'">
+          <span>是否用{{(signCount + 1) * 100}}漫画券</span>
+          <span>或者岛蛋补签</span>
+        </div>
+        <div class="tips" v-show="modalType == 'tip'">
+          <span>恭喜您获得</span>
+          <span class="gift">{{gift}}漫画券</span>
+        </div>
+        <div class="tips" v-show="modalType == 'gift'">
+          <span>完成8天打卡</span>
+          <span class="time">10月8号晚上8点8分开奖</span>
+        </div>
+        <div class="btn-wrapper" v-show="modalType == 'sign'">
+          <span @click="Sign(currentSign, 1)">确定</span>
+          <span @click="showModal = false;">取消</span>
+        </div>
+        <div class="btn-wrapper" v-show="modalType == 'tip'">
+          <span @click="showModal = false;isCreatePrize=true;">立即领取</span>
+        </div>
+        <div class="btn-wrapper" v-show="modalType == 'gift'">
+          <span @click="showModal = false;">知道了</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+
+.J_pageWraper {
+    font-size: 0;
+    background-color: #1d1918;
+    padding-bottom: 8vw;
+    img {
+        width: 100%;
+        border: none;
+    }
+}

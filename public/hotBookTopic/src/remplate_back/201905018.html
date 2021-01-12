@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>爆款书籍</title>
+    <script>
+    !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);
+    </script>
+    <script>
+        if (location.protocol == 'https:') {
+            document.write('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">');
+        }
+    </script>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1261312741"]);
+    </script>
+</head>
+
+<body>
+    <div class="J_pageWraper" id="J_pageWraper" v-cloak>
+        <template v-if="pageType=='free'">
+            <img src="../image/201905018/free-1.jpg" alt="">
+            <img src="../image/201905018/free-2.jpg" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':'5c35cbd30ed881c662f8de71','code':'B1##-1|5c35cbd30ed881c662f8de71##九龙拉棺##-1##-1##201905018$__$爆款书籍##-1##-1##-1'}})" alt="">
+            <img src="../image/201905018/free-3.jpg" alt="">
+            <img src="../image/201905018/free-4.jpg"  @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':'5752f75aa6d59cd12fb9ee84','code':'B1##-1|5752f75aa6d59cd12fb9ee84##阴人勿扰##-1##-1##201905018$__$爆款书籍##-1##-1##-1'}})"  alt="">
+            <div v-show="!isFetching" class="fixed-btn" @click="jumpVip">
+                <template v-if="isMonthly">
+                    <span class="btn type-3"></span>
+                </template>
+                <template v-else>
+                    <p><span>已有 {{joinCount}} 人开通VIP</span></p>
+                    <span class="btn type-1"></span>
+                </template>
+            </div>
+        </template>
+        <template v-else>
+            <img src="../image/201905018/main-1.jpg" alt="">
+            <img src="../image/201905018/main-2.jpg" @click="callNative({action: 'jump',params:{'jumpType':'native','pageType':'bookDetail','id':'5c35cbd30ed881c662f8de71','code':'B1##-1|5c35cbd30ed881c662f8de71##九龙拉棺##-1##-1##201905018$__$爆款书籍##-1##-1##-1'}})" alt="">
+            <img src="../image/201905018/main-3.jpg" alt="">
+            <img src="../image/201905018/main-4.jpg" @click="callNative({action: 'jump',params:{'jumpType':'webview','title': '百万粉丝力荐', 'pageType': '', 'link':'https://h5.zhuishushenqi.com/public/hotBookTopic/201905005.html'}})" alt="">
+            <img src="../image/201905018/main-5.jpg" @click="callNative({action: 'jump',params:{'jumpType':'webview','title': '阳有阳规阴有阴法', 'pageType': '', 'link':'https://h5.zhuishushenqi.com/public/hotBookTopic/201905011.html'}})" alt="">
+            <div v-show="!isFetching" class="fixed-btn" @click="jumpVip">
+                <template v-if="isMonthly">
+                    <span class="btn type-1"></span>
+                </template>
+                <template v-else>
+                    <p><span>已有 {{joinCount}} 人开通VIP</span></p>
+                    <span class="btn type-2"></span>
+                </template>
+            </div>
+        </template>
+       
+    </div>
+    <div style="display:none;">
+        <script type="text/javascript" src="https://s4.cnzz.com/z_stat.php?id=1261312741&web_id=1261312741"></script>
+    </div>
+</body>
+
+
+</html>

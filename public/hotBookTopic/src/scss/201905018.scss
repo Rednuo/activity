@@ -1,0 +1,45 @@
+@import "component/base.scss";
+@import "component/mixin.scss";
+$px2vw: 7.5 / 1vw ;
+.J_pageWraper{
+    padding-bottom: 180/$px2vw;
+    font-size: 0;
+    background-color: #000;
+    img{
+        width: 100%;
+    }
+    .fixed-btn{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding-top: 6/$px2vw;
+        text-align: center;
+        background-color: #dcdddf;
+        p{
+            span{
+                line-height: 32/$px2vw;
+                font-size: 24/$px2vw;
+                background: linear-gradient(to right,#d70000, #ec7c00);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                text-shadow: 0 0 1/$px2vw 0 #fff;
+            }
+        }
+        .btn{
+            display: inline-block;
+            width: 384/$px2vw;
+            height: 94/$px2vw;
+            &.type-1{
+                background: url('../image/201905018/btn-1.png') no-repeat 0 0 / contain;
+            }
+            &.type-2{
+                background: url('../image/201905018/btn-2.png') no-repeat 0 0 / contain;
+            }
+            &.type-3{
+                background: url('../image/201905018/btn-3.png') no-repeat 0 0 / contain;
+            }
+            
+        }
+    }
+}
